@@ -6,3 +6,4 @@ setuptools==68.2.2
 sqlparse==0.4.4
 tzdata==2023.3
 wheel==0.41.2
+pillow==10.1.0
