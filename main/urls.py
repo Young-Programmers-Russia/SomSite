@@ -1,5 +1,5 @@
 from django.urls import path
-
+from . import views
 from .views import *
 
 urlpatterns = [
@@ -17,4 +17,8 @@ urlpatterns = [
     path('server', ServerPage.as_view()),
 
     path('shop', ShopPage.as_view()),
+
+    path('bag_report', views.mods_launch),
+    path('mods_launch', views.mods_launch),
+    path('download', views.download)
 ]

@@ -6,6 +6,18 @@ from django.http import HttpResponse
 from .models import *
 
 
+def bag_report(request):
+    return render(request, 'main/bag_report.html')
+
+
+def mods_launch(recuest):
+    return render(recuest, 'main/mods_launch.html')
+
+
+def download(recuest):
+    return render(recuest, 'main/download.html')
+
+
 class HomePage(View):
     def get(self, request):
         return HttpResponse('HomePage')
