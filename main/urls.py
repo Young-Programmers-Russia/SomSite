@@ -18,7 +18,7 @@ urlpatterns = [
 
     path('shop', ShopPage.as_view()),
 
-    path('bag_report', views.mods_launch),
+    path('bag_report', views.bag_report),
     path('mods_launch', views.mods_launch),
     path('download', views.download)
 ]
