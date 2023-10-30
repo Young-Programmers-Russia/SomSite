@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/servers.css">
-    <title>SOM-Servers</title>
+    {% block style %}{% endblock %}
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="nav_logo">
-                <img src="images/LOGO.png" alt="Logo" class="logo">
+                <img src="{% static 'main/images/LOGO.png' %}" alt="Logo" class="logo">
                 <div class="nav_login">
                     <a href="#" class="nav-l">Войти</a>
                     <a href="#" class="nav-2">Зарегистироваться</a>
@@ -52,122 +53,12 @@
             </div>
         </div>
     </header>
-    <section>
-        <div class="container">
-            <div class="servers">
-                <div class="servers_title">
-                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M26.0968 5.18146C25.9755 4.93914 25.7892 4.73536 25.5587 4.59293C25.3282 4.4505 25.0625 4.37504 24.7916 4.375H10.2082C9.65553 4.375 9.15095 4.68708 8.90303 5.18146L3.0697 16.8481C2.96831 17.0507 2.91553 17.2742 2.91553 17.5007C2.91553 17.7273 2.96831 17.9507 3.0697 18.1533L8.90303 29.82C9.15095 30.3129 9.65553 30.625 10.2082 30.625H24.7916C25.3443 30.625 25.8489 30.3129 26.0968 29.8185L31.9301 18.1519C32.0315 17.9493 32.0843 17.7258 32.0843 17.4993C32.0843 17.2727 32.0315 17.0493 31.9301 16.8467L26.0968 5.18146ZM28.2653 16.0417H16.9428L12.5678 7.29167H23.8903L28.2653 16.0417ZM6.00532 17.5L10.2082 9.09417L14.4112 17.5L10.2082 25.9058L6.00532 17.5ZM23.8903 27.7083H12.5678L16.9428 18.9583H28.2653L23.8903 27.7083Z" fill="black"/>
-                        </svg>
-                    <h1>Список серверов</h1>    
-                </div>
-                <p class="servers_version">1.12.2 - 1.18.2 (+PE)</p>
-                <div class="server_1">
-                    <div class="servers_items">
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="servers_version">1.7.10</p>
-                <div class="server_1">
-                    <div class="servers_items">
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
+    {% block content %}
+    {% endblock %}
     <footer class="footer">
         <div class="container">
             <div class="us">
-                <img src="images/LOGO.png" alt="Logo" class="footer_logo">
+                <img src="{% static 'main/images/LOGO.png' %}" alt="Logo" class="footer_logo">
                 <div class="contact">
                     <a href=""><svg width="30" height="30" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.2377 3.08325H13.778C5.13854 3.08325 3.0835 5.13829 3.0835 13.7624V23.222C3.0835 31.86 5.12312 33.9166 13.7626 33.9166H23.2223C31.8602 33.9166 33.9168 31.877 33.9168 23.2375V13.7778C33.9168 5.13829 31.8772 3.08325 23.2377 3.08325ZM27.9752 25.0828H25.726C24.875 25.0828 24.619 24.3937 23.0928 22.8675C21.7608 21.5833 21.1981 21.4229 20.8605 21.4229C20.3949 21.4229 20.2669 21.5509 20.2669 22.1938V24.2164C20.2669 24.7637 20.0896 25.0844 18.6605 25.0844C17.2735 24.9912 15.9285 24.5698 14.7363 23.8549C13.5441 23.1401 12.5388 22.1522 11.8032 20.9728C10.0567 18.799 8.84153 16.2477 8.25425 13.5219C8.25425 13.1843 8.38221 12.879 9.02508 12.879H11.2728C11.851 12.879 12.0591 13.1365 12.2857 13.73C13.3772 16.9428 15.2395 19.7363 15.995 19.7363C16.2848 19.7363 16.4112 19.6084 16.4112 18.8853V15.5769C16.3156 14.0676 15.514 13.9397 15.514 13.3939C15.5243 13.25 15.5902 13.1157 15.6979 13.0196C15.8055 12.9234 15.9463 12.873 16.0905 12.879H19.624C20.1066 12.879 20.2669 13.1195 20.2669 13.6976V18.1623C20.2669 18.6448 20.475 18.8052 20.62 18.8052C20.9098 18.8052 21.1333 18.6448 21.6637 18.1145C22.8027 16.7254 23.7334 15.1777 24.4263 13.5203C24.4972 13.3213 24.6312 13.1508 24.8079 13.035C24.9847 12.9192 25.1945 12.8644 25.4053 12.879H27.6546C28.3283 12.879 28.4717 13.2166 28.3283 13.6976C27.5104 15.5298 26.4984 17.269 25.3097 18.8853C25.0677 19.2553 24.9705 19.448 25.3097 19.8813C25.5332 20.2189 26.321 20.8772 26.8514 21.5031C27.6221 22.2718 28.262 23.1613 28.7461 24.1363C28.9388 24.7622 28.6166 25.0828 27.9752 25.0828Z" fill="white"/>

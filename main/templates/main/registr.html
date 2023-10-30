@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/servers.css">
-    <title>SOM-Servers</title>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/registr.css">
+    <title>SOM-registr</title>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="nav_logo">
-                <img src="images/LOGO.png" alt="Logo" class="logo">
+                <img src="images/LOGO.png" alt="Logo">
                 <div class="nav_login">
                     <a href="#" class="nav-l">Войти</a>
                     <a href="#" class="nav-2">Зарегистироваться</a>
@@ -26,7 +29,7 @@
                     </svg>
                 </a>
                 <div class="nav_items">
-                    <a href="#" class="href">Сервера</a>
+                    <a href="servers.html" class="href">Сервера</a>
                     <a href="#" class="href">Новости</a>
                     <div class="dropdown">
                         <a class="drop">Помощь <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,118 +55,73 @@
             </div>
         </div>
     </header>
-    <section>
-        <div class="container">
-            <div class="servers">
-                <div class="servers_title">
-                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M26.0968 5.18146C25.9755 4.93914 25.7892 4.73536 25.5587 4.59293C25.3282 4.4505 25.0625 4.37504 24.7916 4.375H10.2082C9.65553 4.375 9.15095 4.68708 8.90303 5.18146L3.0697 16.8481C2.96831 17.0507 2.91553 17.2742 2.91553 17.5007C2.91553 17.7273 2.96831 17.9507 3.0697 18.1533L8.90303 29.82C9.15095 30.3129 9.65553 30.625 10.2082 30.625H24.7916C25.3443 30.625 25.8489 30.3129 26.0968 29.8185L31.9301 18.1519C32.0315 17.9493 32.0843 17.7258 32.0843 17.4993C32.0843 17.2727 32.0315 17.0493 31.9301 16.8467L26.0968 5.18146ZM28.2653 16.0417H16.9428L12.5678 7.29167H23.8903L28.2653 16.0417ZM6.00532 17.5L10.2082 9.09417L14.4112 17.5L10.2082 25.9058L6.00532 17.5ZM23.8903 27.7083H12.5678L16.9428 18.9583H28.2653L23.8903 27.7083Z" fill="black"/>
-                        </svg>
-                    <h1>Список серверов</h1>    
-                </div>
-                <p class="servers_version">1.12.2 - 1.18.2 (+PE)</p>
-                <div class="server_1">
-                    <div class="servers_items">
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
+    <section class="main">
+            <div class="container">
+                <div class="content">
+                    <div class="registration">
+                        <div class="registr_title">
+                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.0968 5.18146C25.9755 4.93914 25.7892 4.73536 25.5587 4.59293C25.3282 4.4505 25.0625 4.37504 24.7916 4.375H10.2082C9.65553 4.375 9.15095 4.68708 8.90303 5.18146L3.0697 16.8481C2.96831 17.0507 2.91553 17.2742 2.91553 17.5007C2.91553 17.7273 2.96831 17.9507 3.0697 18.1533L8.90303 29.82C9.15095 30.3129 9.65553 30.625 10.2082 30.625H24.7916C25.3443 30.625 25.8489 30.3129 26.0968 29.8185L31.9301 18.1519C32.0315 17.9493 32.0843 17.7258 32.0843 17.4993C32.0843 17.2727 32.0315 17.0493 31.9301 16.8467L26.0968 5.18146ZM28.2653 16.0417H16.9428L12.5678 7.29167H23.8903L28.2653 16.0417ZM6.00532 17.5L10.2082 9.09417L14.4112 17.5L10.2082 25.9058L6.00532 17.5ZM23.8903 27.7083H12.5678L16.9428 18.9583H28.2653L23.8903 27.7083Z" fill="black"/>
+                                </svg>
+                            <h1>Регистрация</h1>    
                         </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
+                        <form action="registration.php" method="POST">
+                            <div class="form_group">
+                            <label for="login">Логин:</label>
+                            <input type="text" id="login" name="login" required>
                             </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
+                            <div class="form_group">
+                            <label for="password">Пароль:</label>
+                            <input type="text" id="password" name="password" required>
                             </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
+                            <div class="form_group">
+                            <label for="password">Подтверждение пароля:</label>
+                            <input type="password" id="password_2" name="password" required>
                             </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
+                            <div class="form_group">
+                                <label for="E-mail">E-mail:*</label>
+                                <input type="email" id="E-mail" name="E-mail">
+                            </div>
+                            <div class="form_group">
+                            <button type="submit" class="form_button">Зарегистрироваться</button>
+                            </div>
+                        </form>
                     </div>
+                    
+                        <div class="sidebar">
+                            <div class="servers_title">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M26.0968 5.18146C25.9755 4.93914 25.7892 4.73536 25.5587 4.59293C25.3282 4.4505 25.0625 4.37504 24.7916 4.375H10.2082C9.65553 4.375 9.15095 4.68708 8.90303 5.18146L3.0697 16.8481C2.96831 17.0507 2.91553 17.2742 2.91553 17.5007C2.91553 17.7273 2.96831 17.9507 3.0697 18.1533L8.90303 29.82C9.15095 30.3129 9.65553 30.625 10.2082 30.625H24.7916C25.3443 30.625 25.8489 30.3129 26.0968 29.8185L31.9301 18.1519C32.0315 17.9493 32.0843 17.7258 32.0843 17.4993C32.0843 17.2727 32.0315 17.0493 31.9301 16.8467L26.0968 5.18146ZM28.2653 16.0417H16.9428L12.5678 7.29167H23.8903L28.2653 16.0417ZM6.00532 17.5L10.2082 9.09417L14.4112 17.5L10.2082 25.9058L6.00532 17.5ZM23.8903 27.7083H12.5678L16.9428 18.9583H28.2653L23.8903 27.7083Z" fill="black"/>
+                                    </svg>
+                                <h1>Сервера</h1>    
+                            </div>
+                            <div class="sidebar_items">
+                                <div class="sidebar_item">
+                                    <img src="images/server.png" alt="">
+                                    <h2>Название</h2>
+                                </div>
+                                <div class="sidebar_item">
+                                    <img src="images/server.png" alt="">
+                                    <h2>Название</h2>
+                                </div>
+                                <div class="sidebar_item">
+                                    <img src="images/server.png" alt="">
+                                    <h2>Название</h2>
+                                </div>
+                                <div class="sidebar_item">
+                                    <img src="images/server.png" alt="">
+                                    <h2>Название</h2>
+                                </div>
+                                <div class="sidebar_item">
+                                    <img src="images/server.png" alt="">
+                                    <h2>Название</h2>
+                                </div>
+                            </div>
+                        </div>
+                    
                 </div>
-                <p class="servers_version">1.7.10</p>
-                <div class="server_1">
-                    <div class="servers_items">
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="images/server.png" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
     </section>
-
     <footer class="footer">
         <div class="container">
             <div class="us">

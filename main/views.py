@@ -55,9 +55,9 @@ class ServersPage(ListView):
     template_name = 'main/servers.html'
 
 
-class ServerPage(DetailView):
+class ServerPage(TemplateView):
     model = Servers
-    template_name = 'main/server.html'
+    template_name = 'main/server1.html'
 
 
 class ShopPage(View):

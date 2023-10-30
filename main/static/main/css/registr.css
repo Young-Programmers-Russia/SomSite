@@ -1,0 +1,264 @@
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    margin:0;
+    padding:0;
+    /*font-family: "Roboto", sans-serif;*/
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    background-color: #f1f1f1;
+    /*background-image: url(../images/pattern_3.jpg)*/
+}
+h1, p{
+    margin: 0;
+}
+
+.container{
+    width: 1170px;
+    margin: 0 auto 40px auto;
+
+}
+
+.nav_logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_logo img{
+    width: 10%;
+}
+
+.nav_login{
+    text-align: center;
+    margin: auto 0;
+}
+
+.nav-l{
+    margin-right: 30px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.nav{
+    background: linear-gradient(315deg, rgb(240, 228, 156) 10%, rgb(225, 68, 78));
+    border-radius: 15px;
+    display: flex;
+    /*justify-content: space-between*/;
+    padding: 15px;
+}
+
+.nav_items{
+    text-align: center;
+    margin: auto 0 auto 50px;
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_home{
+    margin: auto 0;
+}
+
+svg{
+    margin: auto 0;
+}
+
+.nav_button{
+    margin: auto 0 auto auto;
+}
+
+.button {
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: #e3615c;
+    border: none;
+    border-radius: 15px;
+    margin: auto 0;
+    display: flex;
+    justify-content: space-between;
+    /*text-transform: uppercase;*/
+}
+
+.button:hover{
+    box-shadow: 4px 4px 100px 4px rgba(225, 71, 79, 0.63);
+    transition-duration: 0.4s;
+    background-color: #e1474f;
+}
+
+.button svg{
+    margin: auto 0 auto 15px;
+}
+
+.drop{
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown-content a:hover {background-color: #ddd;}
+
+.href:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    color: white;
+}
+
+.registration{
+    background-color: #eee3a5;
+    border-radius: 15px;
+    padding: 30px 60px;
+    width: 70%;
+    max-height: 490px;
+}
+
+.registr_title{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 215px;
+}
+
+.form_group{
+    margin-bottom: 20px;
+}
+
+.form_group label, .form_group input {
+      display: block;
+      width: 100%;
+}
+
+.form_group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form_group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.form_button {
+    background-color: #e78a70;
+    border: none;
+    padding: 14px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    border-radius: 15px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.form_button:hover{
+    box-shadow: 1px 1px 62px -6px rgba(226, 79, 84, 0.59);
+    color: white;
+    background-color: #e14950;
+    transition-duration: 0.4s;
+}
+
+.sidebar{
+    background-color: #e78a70;
+    border-radius: 15px;
+    width: 30%;
+    padding: 30px 20px;
+}
+
+.sidebar_item{
+    background-color: #eee3a5;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    gap: 15px;
+    cursor: pointer;
+}
+.sidebar_item h2{
+    font-weight: 400;
+}
+
+.sidebar_item:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.4s;
+}
+
+.sidebar_item img{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: auto 0;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin: auto 0;
+}
+
+.servers_title{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 20px auto;
+    width: 160px;
+}
+footer{
+    background-color: #242424;
+    height: 140px;
+}
+.footer_logo{
+    width: 15%;
+    margin: auto 0;
+}
+.us{
+    display: flex;
+    justify-content: start;
+    gap: 50px;
+}
+.contact{
+    margin: auto 0;
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+}
