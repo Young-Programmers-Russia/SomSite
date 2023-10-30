@@ -130,9 +130,9 @@ STATICFILES_DIRS = [
 
 # Media files (Files from user input from forms)
 
-MEDIA_URL = 'images/'
+MEDIA_URL = 'media/'
 
-MEDIA_ROOT = BASE_DIR / 'images'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Default primary key field type
