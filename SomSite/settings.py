@@ -124,6 +124,8 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 STATICFILES_DIRS = [
     ('main', BASE_DIR / 'main' / 'static'),
+    ('user', BASE_DIR / 'user' / 'static'),
+    ('mods', BASE_DIR / 'mods' / 'static'),
 ]
 
 # Media files (Files from user input from forms)
