@@ -1,21 +1,21 @@
 from django.shortcuts import render
 from django.views import View
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.http import HttpResponse
 
 from .models import *
 
 
-def bag_report(request):
-    return render(request, 'main/bag_report.html')
+class BugReportPage(TemplateView):
+    template_name = 'main/bug_report.html'
 
 
-def mods_launch(recuest):
-    return render(recuest, 'main/mods_launch.html')
+class ModLaunchPage(TemplateView):
+    template_name = 'main/mod_upload.html'
 
 
-def download(recuest):
-    return render(recuest, 'main/download.html')
+class DownloadPage(TemplateView):
+    template_name = 'main/download.html'
 
 
 class HomePage(View):
@@ -40,7 +40,7 @@ class ModsPage(ListView):
 
 class ModPage(DetailView):
     model = Mods
-    template_name = 'main/html/mod.html'
+    template_name = 'main/mod.html'
 
 
 class UserPage(View):
@@ -52,12 +52,12 @@ class UserPage(View):
 
 class ServersPage(ListView):
     model = Servers
-    template_name = 'main/html/servers.html'
+    template_name = 'main/servers.html'
 
 
 class ServerPage(DetailView):
     model = Servers
-    template_name = 'main/html/server.html'
+    template_name = 'main/server.html'
 
 
 class ShopPage(View):

@@ -3,6 +3,7 @@ import uuid
 from django.db import models
 
 
+# Make a separate app for mod uploading and other mod stuff
 class Mods(models.Model):
     mod_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     mod_name = models.CharField(max_length=30)
@@ -44,6 +45,7 @@ class ModModpack(models.Model):
         return self.name
 
 
+# Make user account and pages a separate app
 class Users(models.Model):
     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_name = models.CharField(max_length=30)
@@ -58,6 +60,7 @@ class Users(models.Model):
         return self.name
 
 
+# Make servers and server pages a separate app
 class Servers(models.Model):
     server_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     server_name = models.CharField(max_length=40)
@@ -88,6 +91,7 @@ class UserServer(models.Model):
         return self.name
 
 
+# Make shop a different app
 class Products(models.Model):
     product_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     product_name = models.CharField(max_length=50)
@@ -118,6 +122,7 @@ class OrderProduct(models.Model):
         return self.name
 
 
+# User account and communication app (User account app)
 class Posts(models.Model):
     post_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
@@ -158,6 +163,7 @@ class CommentLike(models.Model):
         return self.name
 
 
+# Reports app
 class Reports(models.Model):
     report_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_id = models.ForeignKey(Users, on_delete=models.CASCADE)

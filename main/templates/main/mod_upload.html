@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Баг-репорт</title>
+    <title>Загрузка модов</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/bag_report.css">
+    <link href="{% static 'main/css/bug_report.css' %}" rel="stylesheet" >
 </head>
 <body>
     <header class="header">
@@ -56,15 +57,21 @@
     <section class="account">
         <div class="container1">
             <div class="main">
-                <div> <center><h1>Баг-репорт</h1></center></div>
+                <div> <center><h1>Загрузка модов</h1></center></div>
 
                 <form method="post" class="form1">
                      {% csrf_token %}
-                    <p>Имя: <br> <input type="text"  style="width: 500px; height: 50px; margin-bottom: 30px; font-size: 18px;" placeholder="Имя" class="form-control"><br></p>
-                    <p>Проект: <br> <input type="text" style="width: 500px; height: 50px; margin-bottom: 30px;font-size: 18px;" placeholder="Проект" class="form-control"><br></p>
-                   <p>Описание ошибки: <br> <textarea class ="form-control" style="width: 500px; height: 100px;font-size: 18px;" placeholder="Описание ошибки"></textarea></p>
+                    <p>Название версии: <br> <input type="text"  style="width: 500px; height: 50px; margin-bottom: 30px; font-size: 18px;" placeholder="Название версии" class="form-control"><br></p>
+                    <p>Сервер: <br> <input type="text" style="width: 500px; height: 50px; margin-bottom: 30px;font-size: 18px;" placeholder="Сервер" class="form-control"><br></p>
+                   <p>Описание: <br> <textarea class ="form-control" style="width: 500px; height: 100px;font-size: 18px;" placeholder="Описание "></textarea></p>
+                    <form enctype="multipart/form-data" method="post">
+                        <p><input type="file" name="f">
+                    </form>
                     <button class="btn functions_button" type="submit">Отправить</button>
                 </form>
+
+
+
             </div>
             <div class="serv_column">
                 <div><center><h1>Сервера</h1></center></div>

@@ -1,6 +1,9 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
-from . import views
+
 from .views import *
+
 
 urlpatterns = [
     path('', HomePage.as_view()),
@@ -18,7 +21,7 @@ urlpatterns = [
 
     path('shop', ShopPage.as_view()),
 
-    path('bag_report', views.mods_launch),
-    path('mods_launch', views.mods_launch),
-    path('download', views.download)
-]
+    path('bug_report', BugReportPage.as_view()),
+    path('mods_launch', ModLaunchPage.as_view()),
+    path('download', DownloadPage.as_view())
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
