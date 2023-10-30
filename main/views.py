@@ -25,17 +25,17 @@ class HomePage(View):
 
 class EventsPage(ListView):
     model = Posts
-    template_name = 'main/html/events.html'
+    template_name = 'main/events.html'
 
 
 class EventPage(DetailView):
     model = Posts
-    template_name = 'main/html/event.html'
+    template_name = 'main/event.html'
 
 
 class ModsPage(ListView):
     model = Mods
-    template_name = 'main/html/mods.html'
+    template_name = 'main/mods.html'
 
 
 class ModPage(DetailView):
