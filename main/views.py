@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.views import View
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.http import HttpResponse
 
 from .models import *
 
 
 def bag_report(request):
-    return render(request, 'main/bag_report.html')
+    return render(request, 'main/bug_report.html')
 
 
 def mods_launch(recuest):
