@@ -1,18 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView
 
 
 class ModUploadPage(TemplateView):
-    template_name = 'mods/mods_upload.html'
-    pass
+    template_name = "mods/mod_upload.html"
 
 
-class ModListPage(ListView):
-    template_name = 'mods/mods_list.html'
-    pass
-
-
-class ModDetailPage(DetailView):
-    template_name = 'mods/mods_detail.html'
-    pass
-# Create your views here.
+class ModsPage(TemplateView):
+    template_name = "mods/mods.html"

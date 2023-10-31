@@ -6,7 +6,7 @@ from .views import *
 
 
 urlpatterns = [
-    path('account', UserAccountPage.as_view()),
-    path('login', UserLoginPage.as_view()),
-    path('register', UserRegistrationPage.as_view()),
+    path('registration', RegistrationPage.as_view()),
+    path('login', LoginPage.as_view()),
+    path('account', AccountPage.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

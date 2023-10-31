@@ -45,7 +45,7 @@ class ModModpack(models.Model):
         return self.name
 
 
-# Make user account and pages a separate app
+# Make mods account and pages a separate app
 class Users(models.Model):
     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_name = models.CharField(max_length=30)

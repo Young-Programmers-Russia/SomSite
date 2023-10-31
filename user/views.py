@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
-class UserAccountPage(TemplateView):
-    template_name = "user/account.html"
+class LoginPage(TemplateView):
+    template_name = "user/login.html"
 
 
-class UserRegistrationPage(TemplateView):
+class RegistrationPage(TemplateView):
     template_name = "user/registration.html"
 
 
-class UserLoginPage(TemplateView):
-    template_name = "user/login.html"
+class AccountPage(TemplateView):
+    template_name = "user/account.html"

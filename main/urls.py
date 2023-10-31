@@ -6,15 +6,8 @@ from .views import *
 
 
 urlpatterns = [
-    path('registration', RegistrationPage.as_view()),
-    path('login', LoginPage.as_view()),
-    path('account', AccountPage.as_view()),
-
     path('bug_report', BugReportPage.as_view()),
     path('download', DownloadPage.as_view()),
-
-    path('mod_upload', ModUploadPage.as_view()),
-    path('mods', ModsPage.as_view()),
 
     path('server', ServerPage.as_view()),
     path('servers', ServersPage.as_view()),

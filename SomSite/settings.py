@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'main',
-    'user',
     'mods',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -120,15 +120,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / 'static'
 
 STATICFILES_DIRS = [
-    ('main', BASE_DIR / 'main' / 'static'),
-    ('user', BASE_DIR / 'user' / 'static'),
-    ('mods', BASE_DIR / 'mods' / 'static'),
+    ('general', BASE_DIR / 'static' / 'general'),
+    ('main', BASE_DIR / 'main' / 'static' / 'main'),
+    ('mods', BASE_DIR / 'mods' / 'static' / 'mods'),
+    ('user', BASE_DIR / 'user' / 'static' / 'user'),
 ]
 
-# Media files (Files from user input from forms)
+# Media files (Files from mods input from forms)
 
 MEDIA_URL = 'media/'
 
