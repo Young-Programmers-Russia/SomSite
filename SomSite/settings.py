@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     'mods',
     'user',
+    'servers',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,7 @@ STATICFILES_DIRS = [
     ('main', BASE_DIR / 'main' / 'static' / 'main'),
     ('mods', BASE_DIR / 'mods' / 'static' / 'mods'),
     ('user', BASE_DIR / 'user' / 'static' / 'user'),
+    ('servers', BASE_DIR / 'servers' / 'static' / 'servers'),
 ]
 
 # Media files (Files from mods input from forms)

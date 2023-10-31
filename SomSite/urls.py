@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('main.urls')),
     path('user/', include('user.urls')),
     path('mods/', include('mods.urls')),
+    path('servers/', include('servers.urls')),
 ]
