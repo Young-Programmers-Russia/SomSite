@@ -1,67 +1,45 @@
-from django.shortcuts import render
-from django.views import View
-from django.views.generic import ListView, DetailView, TemplateView
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 from .models import *
 
 
+class AccountPage(TemplateView):
+    template_name = "main/account.html"
+
+
 class BugReportPage(TemplateView):
-    template_name = 'main/bug_report.html'
-
-
-class ModLaunchPage(TemplateView):
-    template_name = 'main/mod_upload.html'
+    template_name = "main/bug_report.html"
 
 
 class DownloadPage(TemplateView):
-    template_name = 'main/download.html'
+    template_name = "main/download.html"
 
 
-class HomePage(View):
-    def get(self, request):
-        return HttpResponse('HomePage')
+class LoginPage(TemplateView):
+    template_name = "main/login.html"
 
 
-class EventsPage(ListView):
-    model = Posts
-    template_name = 'main/events.html'
+class ModUploadPage(TemplateView):
+    template_name = "main/mod_upload.html"
 
 
-class EventPage(DetailView):
-    model = Posts
-    template_name = 'main/event.html'
+class ModsPage(TemplateView):
+    template_name = "main/mods.html"
 
 
-class ModsPage(ListView):
-    model = Mods
-    template_name = 'main/mods.html'
-
-
-class ModPage(DetailView):
-    model = Mods
-    template_name = 'main/mod.html'
-
-
-class UserPage(View):
-    model = Users
-
-    def get(self, request):
-        return HttpResponse('UserPage')
-
-
-class ServersPage(ListView):
-    model = Servers
-    template_name = 'main/servers.html'
+class RegistrationPage(TemplateView):
+    template_name = "main/registration.html"
 
 
 class ServerPage(TemplateView):
-    model = Servers
-    template_name = 'main/server1.html'
+    template_name = "main/server.html"
 
 
-class ShopPage(View):
-    model = Products
+class ServersPage(TemplateView):
+    template_name = "main/servers.html"
 
-    def get(self, request):
-        return HttpResponse('ShopPage')
+
+
+
+
+
