@@ -6,11 +6,11 @@ from .models import Server
 
 # Create your views here.
 class ServersPage(ListView):
-    template_name = "main/servers.html"
+    template_name = "servers/servers.html"
     model = Server
 
 
 class ServerPage(DetailView):
-    template_name = "main/server.html"
+    template_name = "servers/server.html"
     model = Server
     slug_field = 'server_slug'

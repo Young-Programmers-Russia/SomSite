@@ -18,7 +18,7 @@ class Mods(models.Model):
 
 
 class Modpacks(models.Model):
-    modpack_id = models.UUIDField(primary_key=True, default=uuid.uuid3, editable=False)
+    modpack_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     modpack_name = models.CharField(max_length=30)
     mod_count = models.IntegerField(default=0)
     modpack_version = models.CharField(max_length=25)

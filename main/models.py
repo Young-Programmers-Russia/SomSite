@@ -14,7 +14,7 @@ class Products(models.Model):
     product_price = models.IntegerField(default=9999)
 
     def __str__(self):
-        return self.name
+        return self.product_name
 
 
 class Orders(models.Model):
@@ -24,7 +24,7 @@ class Orders(models.Model):
     order_price = models.IntegerField()
 
     def __str__(self):
-        return self.name
+        return str(self.order_id)+str(self.user_id)
 
 
 class OrderProduct(models.Model):
@@ -33,7 +33,7 @@ class OrderProduct(models.Model):
     product_id = models.ForeignKey(Products, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return str(self.order_product_id)+str(self.order_id)+str(self.product_id)
 
 
 # Reports app
@@ -43,4 +43,4 @@ class Reports(models.Model):
     report_text = models.TextField()
 
     def __str__(self):
-        return self.name
+        return str(self.report_id)+str(self.user_id)
