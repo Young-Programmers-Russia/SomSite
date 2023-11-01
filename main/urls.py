@@ -8,5 +8,4 @@ from .views import *
 urlpatterns = [
     path('bug_report', BugReportPage.as_view()),
     path('download', DownloadPage.as_view()),
-    path('server', ServerPage.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

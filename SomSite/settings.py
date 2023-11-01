@@ -130,7 +130,7 @@ STATICFILES_DIRS = [
     ('servers', BASE_DIR / 'servers' / 'static' / 'servers'),
 ]
 
-# Media files (Files from mods input from forms)
+# Media files (Files from user input from forms)
 
 MEDIA_URL = 'media/'
 
