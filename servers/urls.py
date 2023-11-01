@@ -6,7 +6,6 @@ from .views import *
 
 
 urlpatterns = [
-    path('<slug:server_slug>', ServerPage.as_view()),
-    path('', ServersPage.as_view()),
-    path('servers', ServersPage.as_view()),
+    path('<slug:slug>', ServerPage.as_view(), name='server'),
+    path('', ServersPage.as_view(), name='servers'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

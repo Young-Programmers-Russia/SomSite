@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Mods, Modpacks
+from .models import Mod, Modpack
 # Register your models here.
 
-admin.site.register(Mods)
-admin.site.register(Modpacks)
+admin.site.register(Mod)
+admin.site.register(Modpack)

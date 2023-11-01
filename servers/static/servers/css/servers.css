@@ -38,6 +38,10 @@
     gap: 15px;
     margin-bottom: 15px;
 }
+.server_img{
+    width: 80px;
+    height: 80px;
+}
 h2{
     font-size: 20px;
     font-weight: 700;
@@ -70,4 +74,8 @@ h2{
     justify-content: start;
     flex-wrap: wrap;
     gap: 10px 10px;
+}
+.server_link{
+    display: block;
+    text-align: center;
 }

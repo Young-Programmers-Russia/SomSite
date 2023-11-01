@@ -2,7 +2,7 @@ import uuid
 from django.db import models
 
 
-class Mods(models.Model):
+class Mod(models.Model):
     mod_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     mod_name = models.CharField(max_length=30)
     mod_versions = models.CharField(max_length=30)
@@ -17,7 +17,7 @@ class Mods(models.Model):
         return str(self.mod_name)
 
 
-class Modpacks(models.Model):
+class Modpack(models.Model):
     modpack_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     modpack_name = models.CharField(max_length=30)
     mod_count = models.IntegerField(default=0)
@@ -32,9 +32,9 @@ class Modpacks(models.Model):
 
 
 class ModModpack(models.Model):
-    mod_modpack = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    mod_id = models.ForeignKey(Mods, on_delete=models.CASCADE)
-    modpack_id = models.ForeignKey(Modpacks, on_delete=models.CASCADE)
+    mod_modpack_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    mod_id = models.ForeignKey(Mod, on_delete=models.CASCADE)
+    modpack_id = models.ForeignKey(Modpack, on_delete=models.CASCADE)
     minecraft_versions = models.CharField(max_length=25)
     loader_core = models.CharField(max_length=25)
     minimal_loader_versions = models.CharField(max_length=40)

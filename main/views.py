@@ -9,9 +9,3 @@ class BugReportPage(TemplateView):
 
 class DownloadPage(TemplateView):
     template_name = "main/download.html"
-
-
-class ServerPage(TemplateView):
-    template_name = "main/server.html"
-
-

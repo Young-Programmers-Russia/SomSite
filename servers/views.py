@@ -8,6 +8,8 @@ from .models import Server
 class ServersPage(ListView):
     template_name = "servers/servers.html"
     model = Server
+    ordering = "-minecraft_version"
+    context_object_name = 'servers'
 
 
 class ServerPage(DetailView):

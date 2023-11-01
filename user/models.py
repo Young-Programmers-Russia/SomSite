@@ -4,7 +4,7 @@ from django.db import models
 
 
 # Create your models here.
-class Users(models.Model):
+class User(models.Model):
     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_name = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
@@ -18,9 +18,9 @@ class Users(models.Model):
         return str(self.user_name)
 
 
-class Posts(models.Model):
+class Post(models.Model):
     post_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     post_title = models.CharField(max_length=150)
     post_img = models.ImageField()
     post_text = models.TextField()
@@ -32,14 +32,14 @@ class Posts(models.Model):
 
 class PostLike(models.Model):
     like_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    post_id = models.ForeignKey(Posts, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
+    post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     comment_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
-    post_id = models.ForeignKey(Posts, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
     comment_text = models.TextField()
     comment_date = models.DateField()
 
@@ -47,4 +47,4 @@ class Comments(models.Model):
 class CommentLike(models.Model):
     like_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     comment_id = models.UUIDField(default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)

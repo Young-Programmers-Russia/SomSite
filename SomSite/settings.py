@@ -60,7 +60,7 @@ ROOT_URLCONF = 'SomSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,14 +123,14 @@ STATIC_URL = 'static/'
 
 
 STATICFILES_DIRS = [
-    ('general', BASE_DIR / 'static' / 'general'),
-    ('main', BASE_DIR / 'main' / 'static' / 'main'),
-    ('mods', BASE_DIR / 'mods' / 'static' / 'mods'),
-    ('user', BASE_DIR / 'user' / 'static' / 'user'),
-    ('servers', BASE_DIR / 'servers' / 'static' / 'servers'),
+    ('general', BASE_DIR / 'static'),
+    ('main', BASE_DIR / 'main' / 'static'),
+    ('mods', BASE_DIR / 'mods' / 'static'),
+    ('user', BASE_DIR / 'user' / 'static'),
+    ('servers', BASE_DIR / 'servers' / 'static'),
 ]
 
-# Media files (Files from mods input from forms)
+# Media files (Files from user input from forms)
 
 MEDIA_URL = 'media/'
 

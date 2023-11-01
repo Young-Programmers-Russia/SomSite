@@ -1,4 +1,4 @@
-{% extends "main/layout.html" %}
+{% extends "layout.html" %}
 {% load static %}
 {% block title %} servers {% endblock %}
 
@@ -17,104 +17,34 @@
                     </svg>
                     <h1>Список серверов</h1>
                 </div>
-                <p class="servers_version">1.12.2 - 1.18.2 (+PE)</p>
-                <div class="server_1">
-                    <div class="servers_items">
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="{% static 'general/images/server.png' %}" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
+                {% for version in servers %}
+                    {% ifchanged version.minecraft_version %}
+                        <p class="servers_version">
+                            {{ version.minecraft_version }}
+                        </p>
+                        <div class="server_1">
+                            <div class="servers_items">
+                                {% for server in servers %}
+                                    {% if version.minecraft_version == server.minecraft_version %}
+                                        <a class="server_link" href="{{ server.server_slug }}">
+                                            <div class="servers_item">
+                                                <div class="server">
+                                                    <img class="server_img" src="media/{{ server.server_img }}" alt="">
+                                                    <div class="server_info">
+                                                        <h2>{{ server.server_name }}</h2>
+                                                        <p>{{ server.server_description }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="server_online"></div>
+                                                <p class="info_online">20/100</p>
+                                            </div>
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
                         </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="{% static 'general/images/server.png' %}" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="{% static 'general/images/server.png' %}" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="{% static 'general/images/server.png' %}" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="servers_version">1.7.10</p>
-                <div class="server_1">
-                    <div class="servers_items">
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="{% static 'general/images/server.png' %}" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="{% static 'general/images/server.png' %}" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="{% static 'general/images/server.png' %}" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                        <div class="servers_item">
-                            <div class="server">
-                                <img src="{% static 'general/images/server.png' %}" alt="">
-                                <div class="server_info">
-                                    <h2>Название сервера</h2>
-                                    <p>Мини-описание</p>
-                                </div>
-                            </div>
-                            <div class="server_online"></div>
-                            <p class="info_online">20/100</p>
-                        </div>
-                    </div>
-                </div>
+                    {% endifchanged %}
+                {% endfor %}
             </div>
         </div>
     </section>
