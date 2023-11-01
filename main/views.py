@@ -38,6 +38,8 @@ class ServerPage(TemplateView):
 class ServersPage(TemplateView):
     template_name = "main/servers.html"
 
+class FFF(TemplateView):
+    template_name = "main/fff.html"
 
 
 
