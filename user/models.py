@@ -13,6 +13,7 @@ class User(models.Model):
     user_img = models.ImageField(default=None)
     user_skin = models.ImageField(default=None)
     user_somus = models.IntegerField(default=0)
+    user_slug = models.SlugField(max_length=50, unique=True)
 
     def __str__(self) -> str:
         return str(self.user_name)

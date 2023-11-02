@@ -12,6 +12,7 @@ class Product(models.Model):
     product_img = models.ImageField(default=None)
     product_descriptions = models.TextField(default=None)
     product_price = models.IntegerField(default=9999)
+    product_slug = models.SlugField(max_length=50, unique=True)
 
     def __str__(self):
         return self.product_name

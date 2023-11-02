@@ -12,6 +12,7 @@ class Mod(models.Model):
     loader_core = models.CharField(max_length=50)
     minimal_loader_version = models.CharField(max_length=25)
     is_server = models.BooleanField(default=False)
+    mod_slug = models.SlugField(max_length=50, unique=True)
 
     def __str__(self) -> str:
         return str(self.mod_name)
