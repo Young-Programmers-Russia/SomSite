@@ -1,7 +1,7 @@
 import uuid
 
 from django.db import models
-from mods.models import Modpack
+
 from user.models import User
 
 

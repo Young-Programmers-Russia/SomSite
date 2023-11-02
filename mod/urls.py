@@ -6,6 +6,6 @@ from .views import *
 
 
 urlpatterns = [
-    path('bug_report/', BugReportPage.as_view(), name='bug_report'),
-    path('download/', DownloadPage.as_view(), name='download'),
+    path('mod_upload/', ModUploadPage.as_view(), name='mod_upload'),
+    path('mods/', ModsPage.as_view(), name='mods'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
