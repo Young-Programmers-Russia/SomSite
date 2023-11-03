@@ -1,8 +1,8 @@
 import uuid
 
 from django.db import models
+from django.conf import settings
 
-from user.models import User
 
 
 # Make shop a different app
@@ -20,12 +20,9 @@ class Product(models.Model):
 
 class Order(models.Model):
     order_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     order_date = models.DateField()
     order_price = models.IntegerField()
-
-    def __str__(self):
-        return str(self.order_id)+str(self.user_id)
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 
 class OrderProduct(models.Model):
@@ -40,8 +37,6 @@ class OrderProduct(models.Model):
 # Reports app
 class Report(models.Model):
     report_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     report_text = models.TextField()
 
-    def __str__(self):
-        return str(self.report_id)+str(self.user_id)
+

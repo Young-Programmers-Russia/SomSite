@@ -1,30 +1,42 @@
 import uuid
-
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
+from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
+from .managers import CustomUserManager
+from django.conf import settings
 
 
-class User(models.Model):
-    user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_name = models.CharField(max_length=30)
-    password = models.CharField(max_length=30)
-    email = models.EmailField(max_length=60)
-    referal_adress = models.CharField(max_length=150)
-    user_img = models.ImageField(default=None)
-    user_skin = models.ImageField(default=None)
-    user_somus = models.IntegerField(default=0)
-    user_slug = models.SlugField(max_length=50, unique=True)
+class CustomUser(AbstractBaseUser, PermissionsMixin):
+    email = models.EmailField(_('email address'), unique=True)
+    username = models.CharField(max_length=25, unique=True)
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateTimeField(default=timezone.now)
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email', ]
 
-    def __str__(self) -> str:
-        return str(self.user_name)
+    objects = CustomUserManager()
+
+    def __str__(self):
+        return self.username
+
+    def has_perms(self, perm, obj=None):
+        return self.is_admin
+
+    def has_module_perms(self, app_label):
+        return True
 
 
 class Post(models.Model):
     post_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     post_title = models.CharField(max_length=150)
     post_img = models.ImageField()
     post_text = models.TextField()
     post_date = models.DateField()
+
 
     def __str__(self) -> str:
         return str(self.post_title)
@@ -33,18 +45,18 @@ class Post(models.Model):
 class PostLike(models.Model):
     like_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 
 class Comment(models.Model):
     comment_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
     comment_text = models.TextField()
     comment_date = models.DateField()
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 
 class CommentLike(models.Model):
     like_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     comment_id = models.UUIDField(default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

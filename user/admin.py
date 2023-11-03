@@ -1,10 +1,7 @@
 from django.contrib import admin
 
-from .models import User
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from .models import CustomUser
 
 
-class UserAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"user_slug": ["user_name"]}
-
-
-admin.site.register(User, UserAdmin)
+admin.site.register(CustomUser)
