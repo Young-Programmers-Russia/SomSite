@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from server.models import Server
 
 
 class LoginPage(TemplateView):

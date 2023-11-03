@@ -18,26 +18,14 @@
                         <h1>Сервера</h1>
                     </div>
                     <div class="sidebar_items">
-                        <div class="sidebar_item">
-                            <img src="{% static 'images/SERVER.png' %}" alt="">
-                            <h2>Название</h2>
-                        </div>
-                        <div class="sidebar_item">
-                             <img src="{% static 'images/SERVER.png' %}" alt="">
-                            <h2>Название</h2>
-                        </div>
-                        <div class="sidebar_item">
-                             <img src="{% static 'images/SERVER.png' %}" alt="">
-                            <h2>Название</h2>
-                        </div>
-                        <div class="sidebar_item">
-                             <img src="{% static 'images/SERVER.png' %}" alt="">
-                            <h2>Название</h2>
-                        </div>
-                        <div class="sidebar_item">
-                             <img src="{% static 'images/SERVER.png' %}" alt="">
-                            <h2>Название</h2>
-                        </div>
+                        {% for server in minecraft %}
+                            <a href="/servers/{{server.server_slug}}">
+                                <div class="sidebar_item">
+                                    <img src="/media/{{ server.server_img }}" alt="">
+                                    <h2>{{ server.server_name }}</h2>
+                                </div>
+                            </a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

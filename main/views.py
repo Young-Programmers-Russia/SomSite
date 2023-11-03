@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from .models import *
+from server.models import Server
 
 
 class BugReportPage(TemplateView):

@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'SomSite.context_processor.add_variable_to_context'
             ],
         },
     },
@@ -134,7 +135,6 @@ STATICFILES_DIRS = [
 MEDIA_URL = 'media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field

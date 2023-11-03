@@ -19,8 +19,8 @@
             <div class="nav_logo">
                 <img src="{% static 'images/LOGO.png' %}" alt="Logo" class="logo">
                 <div class="nav_login">
-                    <a href="#" class="nav-l">Войти</a>
-                    <a href="#" class="nav-2">Зарегистироваться</a>
+                    <a href="{% url 'login' %}" class="nav-l">Войти</a>
+                    <a href="{% url 'registration' %}" class="nav-2">Зарегистироваться</a>
                 </div>
             </div>
             <div class="nav">
@@ -29,7 +29,7 @@
                     </svg>
                 </a>
                 <div class="nav_items">
-                    <a href="#" class="href">Сервера</a>
+                    <a href="{% url 'servers' %}" class="href">Сервера</a>
                     <a href="#" class="href">Новости</a>
                     <div class="dropdown">
                         <a class="drop">Помощь <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@
                             </svg>                            
                             </a>
                         <div class="dropdown-content">
-                            <a href="#">Баг-репорт</a>
+                            <a href="{% url 'bug_report' %}">Баг-репорт</a>
                             <a href="#">Поддержка</a>
                             <a href="#">Помощь</a>
                         </div>

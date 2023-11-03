@@ -24,11 +24,6 @@ class Server(models.Model):
     def __str__(self) -> str:
         return str(self.server_name)
 
-    # def save(self, *args, **kwargs):
-    #     if not self.server_id:
-    #         self.server_slug = slugify(self.server_name)
-    #     super(Server, self).save(*args, **kwargs)
-
 
 class UserServer(models.Model):
     user_storage_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
