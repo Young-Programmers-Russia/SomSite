@@ -44,18 +44,21 @@ h1, h2, h3, h4, p{
 }
 
 .pop_up{
-    display: none;
+
     width:100%;
     height:100%;
     position: fixed;
     left: 0;
     top: 0;
-    background-color: rgba(0,0,0, .8);
+    background-color: transparent;
     z-index: 2;
+    transform:translateY(-44%) scale(0);
+    transition: 0.5s all;
 }
 
 .pop_up.active{
-    display: block;
+   transform:translate(0) scale(100%);
+    background-color: rgba(0,0,0, .8);
 }
 
 .pop_up_container{
