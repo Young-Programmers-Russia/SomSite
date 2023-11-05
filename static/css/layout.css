@@ -31,6 +31,26 @@ h1, h2, h3, h4, p{
     width: 10%;
 }
 
+.header_user{
+    display: flex;
+    justify-content: start;
+    margin: auto 0;
+    gap: 15px;
+}
+
+.user_money{
+    display: flex;
+    justify-content: start;
+    gap: 3px;
+    max-width: 70px;
+    margin-bottom: 4px;
+}
+
+.user_img{
+    height: 50px;
+    width: 50px;
+}
+
 .nav_login{
     text-align: center;
     margin: auto 0;
