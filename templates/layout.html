@@ -19,10 +19,31 @@
             <div class="nav_logo">
                 <img src="{% static 'images/LOGO.png' %}" alt="Logo" class="logo">
                 <div class="nav_login">
-                    <a href="{% url 'login' %}" class="nav-l">Войти</a>
+                    <a href="{% url 'login' %}" class="nav-l" id="open_pop_up">Войти</a>
                     <a href="{% url 'registration' %}" class="nav-2">Зарегистироваться</a>
                 </div>
             </div>
+            <div class="pop_up" id="pop_up">
+                <div class="pop_up_container">
+                    <div class="pop_up_body" id="pop_up_body">
+                        <form action="registration.php" method="POST">
+                        <div class="form_group">
+                            <label for="login">Логин:</label>
+                            <input type="text" id="login" name="login" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="password">Пароль:</label>
+                            <input type="text" id="password" name="password" required>
+                        </div>
+                        <div class="form_group">
+                            <button type="submit" class="form_button">Войти</button>
+                        </div>
+                        </form>
+                        <div class="pop_up_close" id="pop_up_close"> &#10006</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="nav">
                 <a href="#" class="nav_home"><svg width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMinYMin meet" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M34.6187 15.7578L22.1266 3.96564L22.1016 3.9422C21.5275 3.41681 20.7774 3.12543 19.9992 3.12543C19.221 3.12543 18.471 3.41681 17.8969 3.9422L17.8703 3.96564L5.38125 15.7578C5.06453 16.0509 4.81169 16.4061 4.63855 16.8013C4.46541 17.1965 4.37569 17.6232 4.375 18.0547V32.5C4.375 33.3288 4.70424 34.1237 5.29029 34.7097C5.87634 35.2958 6.6712 35.625 7.5 35.625H15C15.8288 35.625 16.6237 35.2958 17.2097 34.7097C17.7958 34.1237 18.125 33.3288 18.125 32.5V25.625H21.875V32.5C21.875 33.3288 22.2042 34.1237 22.7903 34.7097C23.3763 35.2958 24.1712 35.625 25 35.625H32.5C33.3288 35.625 34.1237 35.2958 34.7097 34.7097C35.2958 34.1237 35.625 33.3288 35.625 32.5V18.0547C35.6243 17.6232 35.5346 17.1965 35.3615 16.8013C35.1883 16.4061 34.9355 16.0509 34.6187 15.7578ZM31.875 31.875H25.625V25C25.625 24.5896 25.5442 24.1833 25.3871 23.8041C25.2301 23.425 24.9999 23.0805 24.7097 22.7903C24.4195 22.5001 24.075 22.2699 23.6959 22.1129C23.3167 21.9558 22.9104 21.875 22.5 21.875H17.5C16.6712 21.875 15.8763 22.2043 15.2903 22.7903C14.7042 23.3764 14.375 24.1712 14.375 25V31.875H8.125V18.325L20 7.11408L31.875 18.325V31.875Z" fill="black"/>
@@ -74,5 +95,6 @@
             </div>  
         </div>
     </footer>
+    <script src="{% static 'user/js/login.js' %}"></script>
 </body>
 </html>
