@@ -9,3 +9,6 @@ class BugReportPage(TemplateView):
 
 class DownloadPage(TemplateView):
     template_name = "main/download.html"
+
+class IndividualNewsPage(TemplateView):
+    template_name = "main/individual_news.html"
