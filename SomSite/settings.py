@@ -65,7 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'SomSite.context_processor.add_variable_to_context'
+                'management.context_processors.context_processor.add_variable_to_context'
             ],
         },
     },

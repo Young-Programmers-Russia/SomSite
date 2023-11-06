@@ -19,7 +19,7 @@
             <div class="nav_logo">
                 <img src="{% static 'images/LOGO.png' %}" alt="Logo" class="logo">
                 <div class="nav_login">
-                    <a href="{% url 'login' %}" class="nav-l" id="open_pop_up">Войти</a>
+                    <a class="nav-l" id="open_pop_up">Войти</a>
                     <a href="{% url 'registration' %}" class="nav-2">Зарегистироваться</a>
                 </div>
                 <!--<div class="header_user">
@@ -33,10 +33,11 @@
                     </div>
                 </div>-->
             </div>
+
             <div class="pop_up" id="pop_up">
                 <div class="pop_up_container">
                     <div class="pop_up_body" id="pop_up_body">
-                        <form action="registration.php" method="POST">
+                        <form method="POST">
                         <div class="form_group">
                             <label for="login">Логин:</label>
                             <input type="text" id="login" name="login" required>

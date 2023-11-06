@@ -1,7 +1,5 @@
 from django.views.generic import TemplateView
 
-from server.models import Server
-
 
 class BugReportPage(TemplateView):
     template_name = "main/bug_report.html"
