@@ -6,7 +6,6 @@ from mod.models import Modpack
 from django.conf import settings
 
 
-
 class Server(models.Model):
     server_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     server_name = models.CharField(max_length=40)

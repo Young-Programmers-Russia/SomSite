@@ -9,8 +9,9 @@ from django.conf import settings
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(_('email address'), unique=True)
-    username = models.CharField(max_length=25, unique=True)
+    username = models.CharField(_('username'), max_length=25, unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)

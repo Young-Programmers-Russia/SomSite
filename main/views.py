@@ -11,3 +11,8 @@ class DownloadPage(TemplateView):
 
 class IndividualNewsPage(TemplateView):
     template_name = "main/individual_news.html"
+
+
+class HomePage(TemplateView):
+    template_name = 'main/home.html'
+
