@@ -14,7 +14,6 @@ class Server(models.Model):
     server_ip = models.CharField(max_length=30)
     java_versions = models.IntegerField()
     modpack_id = models.ForeignKey(Modpack, related_name='server_modpack_id', on_delete=models.CASCADE, null=True, blank=True)
-    modpack_version = models.ForeignKey(Modpack, related_name='server_modpack_version', on_delete=models.CASCADE, null=True, blank=True)
     minecraft_version = models.CharField(max_length=25)
     loader_core = models.CharField(max_length=50)
     minimal_loader_version = models.CharField(max_length=25)
