@@ -1,4 +1,4 @@
-from server.models import Server
+from apps.servers.models import Server
 
 
 def add_variable_to_context(request):
