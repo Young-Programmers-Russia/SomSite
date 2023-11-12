@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+APPS_DIR = BASE_DIR / 'apps'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -36,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'main',
-    'mod',
-    'server',
-    'user',
+    'apps.main',
+    'apps.mods',
+    'apps.servers',
+    'apps.users',
+    'apps.launcher_download',
 ]
 
 MIDDLEWARE = [
@@ -66,12 +69,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'management.context_processors.context_processor.add_variable_to_context'
-            ],
+            ]
         },
     },
 ]
-
-AUTH_USER_MODEL = 'user.CustomUser'
 
 WSGI_APPLICATION = 'SomSite.wsgi.application'
 
@@ -116,19 +117,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    ('main', BASE_DIR / 'main' / 'static'),
-    ('user', BASE_DIR / 'user' / 'static'),
-    ('mod', BASE_DIR / 'mod' / 'static'),
-    ('server', BASE_DIR / 'server' / 'static'),
+    ('general', BASE_DIR / 'static' / 'general'),
+    ('main', APPS_DIR / 'main' / 'static'),
+    ('users', APPS_DIR / 'users' / 'static'),
+    ('mods', APPS_DIR / 'mods' / 'static'),
+    ('servers', APPS_DIR / 'servers' / 'static'),
+    ('launcher', APPS_DIR / 'launcher_download' / 'static')
 ]
 
 # Media files (Files from user input from forms)
 
 MEDIA_URL = 'media/'
-
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
@@ -136,6 +137,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# User model and redirects
+
+AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = '/accounts/profile'
 LOGIN_URL = '/accounts/login'
 LOGOUT_REDIRECT_URL = '/accounts/login'
