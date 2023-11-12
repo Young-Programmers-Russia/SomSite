@@ -2,6 +2,7 @@
     background-color: #eee3a5;
     border-radius: 15px;
     padding: 30px;
+    /*min-height: calc(100vh - 140px - 200px);*/
 }
 .servers_version{
     margin-bottom: 15px;

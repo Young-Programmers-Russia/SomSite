@@ -11,7 +11,11 @@ body{
     padding:0;
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    background-color: #f1f1f1;
+    background-image: url("../images/fon.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-color: #f1f1f1;*/
+    /*min-height: 100%;*/
 }
 h1, h2, h3, h4, p{
     margin: 0;
@@ -25,6 +29,10 @@ h1, h2, h3, h4, p{
 .nav_logo{
     display: flex;
     justify-content: space-between;
+    background-image: url("../images/red_pattern.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 15px 0 15px;
 }
 
 .logo{
@@ -159,7 +167,7 @@ h1, h2, h3, h4, p{
 
 .nav{
     background: linear-gradient(315deg, rgb(240, 228, 156) 10%, rgb(225, 68, 78));
-    border-radius: 15px;
+    border-radius: 0 0 15px 15px;
     display: flex;
     /*justify-content: space-between*/;
     padding: 15px;
