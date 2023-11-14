@@ -1,8 +1,21 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.hashers import make_password
+
+
+def salt_encoded_from_id(user_id, shift):
+    salt = ''
+
+    for i in user_id:
+        shifted_word = ord(i) + shift
+        salt = salt + chr(shifted_word)
+
+    return salt
 
 
 class CustomUserManager(BaseUserManager):
+    use_in_migrations = True
+
     def create_user(self, email, username, password=None):
         if not email:
             raise ValueError(_('The Email must be set'))
@@ -14,7 +27,9 @@ class CustomUserManager(BaseUserManager):
             username=username
         )
 
-        user.set_password(password)
+        salt = salt_encoded_from_id(str(user.id), 1)
+
+        user.password = make_password(password, salt)
         user.save(using=self._db)
         return user
 

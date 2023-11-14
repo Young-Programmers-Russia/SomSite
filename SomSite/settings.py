@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zkr=v=#n447@0+rn)$h*igax2w5m7jyz39z)#0ak@no3ll#)yc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mocsom.site', 'www.mocsom.cite']
+ALLOWED_HOSTS = ['mocsom.site', 'www.mocsom.cite', '127.0.0.1']
 
 # Application definition
 
@@ -121,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'ru-RU'
 USE_I18N = True
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
