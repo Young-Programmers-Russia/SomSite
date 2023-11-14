@@ -11,14 +11,19 @@ body{
     padding:0;
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    background-image: url("../images/fon.jpg");
-    background-repeat: no-repeat;
+    background: url("../images/fon.jpg");
     background-size: cover;
-    /*background-color: #f1f1f1;*/
-    /*min-height: 100%;*/
+    background-attachment: fixed;
 }
 h1, h2, h3, h4, p{
     margin: 0;
+}
+
+.wrapper{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container{
@@ -43,7 +48,15 @@ h1, h2, h3, h4, p{
     display: flex;
     margin: auto 0;
     gap: 15px;
-    padding: 18.6px;
+    margin: 8.6px;
+    background-color: #f0e49c;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.header_user:hover{
+    transition-duration: 0.4s;
+    background-color: #efda97;
 }
 
 .user_money{
@@ -251,6 +264,7 @@ svg{
 footer{
     background-color: #242424;
     height: 140px;
+    margin-top: auto;
 }
 .footer_logo{
     width: 15%;
