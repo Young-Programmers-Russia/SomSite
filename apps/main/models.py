@@ -33,9 +33,3 @@ class OrderProduct(models.Model):
         return str(self.order_product_id)+str(self.order_id)+str(self.product_id)
 
 
-# Reports app
-class Report(models.Model):
-    report_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    report_text = models.TextField()
-
-
