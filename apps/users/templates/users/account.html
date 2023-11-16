@@ -11,7 +11,7 @@
             <div class="main">
                 <div class="info">
                     <div class="uniq">
-                        <img src="http://placehold.it/150x150/" />
+                        <img src="{% static 'general/images/Steve.jpg' %}" />
                         <div class="uniq_info">
                             <h1>{{ user.username }}</h1>
                             <p class="money">145 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +82,7 @@
 <!--                        <button class="functions_button">Ввести промокод</button>-->
 <!--                    </form>-->
                     <a href="{% url 'users:logout' %}?next=/{% url 'users:login' %}">
-                        <h1 class="functions_button">Выйти</h1>
+                        <button class="functions_button">Выйти</button>
                     </a>
                 </div>
             </div>

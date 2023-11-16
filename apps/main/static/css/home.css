@@ -45,7 +45,7 @@
     background-color: #e78a70;
     border: none;
     padding: 15px;
-    font-family: "Roboto";
+    font-family: "Ubuntu", sans-serif;
     font-size: 18px;
     border-radius: 15px;
     max-width: 210px;
@@ -66,7 +66,10 @@
     display:flex;
     justify-content: space-between;
     margin: 0 auto 20px auto;
-    width: 305px;
+    width: 325px;
+    background-color: #e78a70;
+    border-radius: 15px;
+    padding: 7px;
 }
 
 .new{
@@ -110,7 +113,7 @@
 .pagination a {
     color: black;
     float: left;
-    font-family: "Roboto", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     padding: 8px 16px;
     text-decoration: none;
 }
