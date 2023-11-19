@@ -1,8 +1,11 @@
 from django.urls import path
-from .views import DownloadPage
+
+from . import views
 
 
 app_name = 'download'
 urlpatterns = [
-    path('', DownloadPage.as_view(), name='download'),
+    # path('', views.DownloadPage.as_view(), name='download'),
+    path('', views.download_file, name='download'),
+    path('<filename>', views.download_file, name='download_file')
 ]
