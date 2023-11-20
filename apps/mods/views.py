@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView
 from .forms import ModsFileFieldForm
 
@@ -10,7 +11,7 @@ class ModUploadPage(TemplateView):
 class ModsUploadFormView(FormView):
     form_class = ModsFileFieldForm
     template_name = 'mods/mods_upload.html'
-    success_url = "..."
+    success_url = reverse_lazy('mods:mod_upload')
 
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
@@ -23,8 +24,9 @@ class ModsUploadFormView(FormView):
     def form_valid(self, form):
         files = form.cleaned_data['file_field']
         for f in files:
-            ... #Сделать так чтобы файлы создавали свои модели
-        return super().form_valid()
+            ...     # Сделать так, чтобы файлы создавали свои модели
+            ...     # Проверить куда они грузятся. Должны грузится в папку media
+        return super().form_valid(form)
 
 
 class ModsPage(TemplateView):
