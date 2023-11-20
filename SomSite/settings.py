@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zkr=v=#n447@0+rn)$h*igax2w5m7jyz39z)#0ak@no3ll#)yc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mocsom.site', 'www.mocsom.cite', '127.0.0.1']
+ALLOWED_HOSTS = ['mocsom.site', 'www.mocsom.site', 'localhost']
 
 # Application definition
 
@@ -132,6 +132,13 @@ STATICFILES_DIRS = [
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ragexzona@gmail.com'
+EMAIL_HOST_PASSWORD = 'ptks xghi ikbj orkm'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
