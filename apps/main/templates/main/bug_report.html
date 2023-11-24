@@ -15,27 +15,22 @@
         </svg>
         <h1>Баг-репорт</h1>
     </div>
-    <form action="" method="POST" class="contact-form">
+    <form method="POST" class="contact-form">
         {% csrf_token %}
+        {% for field in form %}
+            <div class="form_control">
+                <div class="tag">{{field.label}}</div>
+                {{field}}
+            </div>
+        {% endfor %}
         <div class="form_control">
-            <div class="tag">Full Name</div>
-            <input type="text" name="full-name">
+            <input type="submit" class="btn submit-btn" value="Отправить отзыв">
         </div>
-        <div class="form_control">
-            <div class="tag">Email</div>
-            <input type="text" name="email">
-        </div>
-        <div class="form_control">
-            <div class="tag">Subject</div>
-            <input type="text" name="subject">
-        </div>
-        <div class="form_control">
-            <div class="tag">Message</div>
-            <textarea name="message" cols="30" rows="10"></textarea>
-        </div>
-        <div class="form_control">
-            <input type="Submit" class="btn submit-btn" value="Send Message">
-        </div>
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
     </form>
 </div>
 {% endblock %}
