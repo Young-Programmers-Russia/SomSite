@@ -3,9 +3,7 @@ from django.contrib import admin
 from .models import Launcher
 
 
+@admin.register(Launcher)
 class LauncherAdmin(admin.ModelAdmin):
-    list_filter = ['os', 'version']
-    list_display = ['name', 'version', 'os']
-
-
-admin.site.register(Launcher, LauncherAdmin)
+    list_display = ['__str__', 'version', 'os']
+    ordering = ['os', '-version']
