@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru-RU">
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -21,7 +21,9 @@
     <header class="header">
         <div class="container">
             <div class="nav_logo">
-                <img src="{% static 'general/images/LOGO.png' %}" alt="Logo" class="logo">
+                <a href="{% url 'main:home' %}">
+                    <img src="{% static 'general/images/LOGO.png' %}" alt="Logo" class="logo">
+                </a>
                 {% if user.is_anonymous %}
                     <div class="nav_login">
                         <a href='{% url "users:login" %}' class="nav-l">Войти</a>

@@ -30,7 +30,7 @@
     -ms-line-clamp: 6;
     -webkit-line-clamp: 6;
     line-clamp: 6;
-    display: -webkit-box;
+    /*display: -webkit-box;*/
     display: box;
     word-wrap: break-word;
     -webkit-box-orient: vertical;

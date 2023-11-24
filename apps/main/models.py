@@ -2,6 +2,7 @@ import uuid
 
 from django.db import models
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 
 # Make shop a different app
@@ -31,5 +32,12 @@ class OrderProduct(models.Model):
 
     def __str__(self):
         return str(self.order_product_id)+str(self.order_id)+str(self.product_id)
+
+
+class BugReport(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    project = models.CharField(_("Проект"), max_length=50)
+    text = models.TextField(_("Текст"))
 
 
