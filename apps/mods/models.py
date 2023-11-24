@@ -22,6 +22,7 @@ class Mod(models.Model):
     mod_name = models.CharField(max_length=30)
     mod_versions = models.CharField(max_length=30)
     mod_link = models.CharField(max_length=50)
+    mod_file = models.FileField(upload_to='mods/')
     mod_descriptions = models.TextField(default=None)
     minecraft_versions = models.CharField(max_length=30)
     loader_core = models.CharField(max_length=50)
