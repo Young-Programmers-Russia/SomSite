@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zkr=v=#n447@0+rn)$h*igax2w5m7jyz39z)#0ak@no3ll#)yc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mocsom.site', 'www.mocsom.site', 'localhost']
+ALLOWED_HOSTS = ['mocsom.site', 'www.mocsom.site', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://mocsom.site', 'https://www.mocsom.site']
 
@@ -137,7 +137,6 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
