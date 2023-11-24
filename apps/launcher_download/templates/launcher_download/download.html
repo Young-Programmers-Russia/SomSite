@@ -17,33 +17,25 @@
             <h1>Скачать </h1>
         </div>
         <div class="lwa_main">
-            {% for launcher in launchers|slice:":3" %}
-                {% if launcher.os == 'LINUX' %}
-                    <a href="{% url 'download:download_file' id=launcher.id %}" >
-                        <div class="lwa">
-                            <img class="os" src="{% static 'launcher/images/LINUX.png' %}" style="height: 170px; width:170px;">
-                            <h3 style="display:flex; justify-content: center;">Linux</h3>
-                        </div>
-                    </a>
-                {% endif %}
-                {% if launcher.os == 'WINDOWS' %}
-                    <a href="{% url 'download:download_file' id=launcher.id %}" >
-                        <div class="lwa">
-                            <img class="os" src="{% static 'launcher/images/WINDOWS.png' %}"
-                                 style="height: 150px; width:150px; margin:10px">
-                            <h3 style="display:flex; justify-content: center;">Windows</h3>
-                        </div>
-                    </a>
-                {% endif %}
-                {% if launcher.os == 'MAC' %}
-                    <a href="{% url 'download:download_file' id=launcher.id %}" >
-                        <div class="lwa">
-                            <img class="os" src="{% static 'launcher/images/APPLE.png' %}" style="height: 170px; width:170px;">
-                            <h3 style="display:flex; justify-content: center;">MacOs</h3>
-                        </div>
-                    </a>
-                {% endif %}
-            {% endfor %}
+            <a href='{{linux.file.url}}'>
+                <div class="lwa">
+                    <img class="os" src="{% static 'launcher/images/LINUX.png' %}" style="height: 170px; width:170px;">
+                    <h3 style="display:flex; justify-content: center;">Linux</h3>
+                </div>
+            </a>
+            <a href='{{windows.file.url}}'>
+                <div class="lwa">
+                    <img class="os" src="{% static 'launcher/images/WINDOWS.png' %}"
+                         style="height: 150px; width:150px; margin:10px">
+                    <h3 style="display:flex; justify-content: center;">Windows</h3>
+                </div>
+            </a>
+            <a href='{{mac.file.url}}'>
+                <div class="lwa">
+                    <img class="os" src="{% static 'launcher/images/APPLE.png' %}" style="height: 170px; width:170px;">
+                    <h3 style="display:flex; justify-content: center;">MacOs</h3>
+                </div>
+            </a>
         </div>
     </div>
 {% endblock %}

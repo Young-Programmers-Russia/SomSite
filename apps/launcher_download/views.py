@@ -1,5 +1,5 @@
-from django.http import FileResponse
-from django.views import generic
+from django.shortcuts import render
+
 from .models import Launcher
 
 
@@ -22,19 +22,17 @@ from .models import Launcher
 #         return render(request, 'launcher_download/download.html')
 
 
-class LauncherView(generic.ListView):
-    model = Launcher
-    template_name = 'launcher_download/download.html'
-    context_object_name = 'launchers'
-    ordering = ['os', '-version']
-
-
-def launcher_download(request, id):
-    launcher = Launcher.objects.get(id=id)
-    file_name = launcher.file.path
-    response = FileResponse(open(file_name, 'rb'))
-    return response
-
+def launcher_view(request):
+    linux = Launcher.objects.filter(os="LINUX").order_by('version')[:1]
+    windows = Launcher.objects.filter(os="WINDOWS").order_by('version')[:1]
+    mac = Launcher.objects.filter(os="MAC").order_by('version')[:1]
+    context = {}
+    for os_str, os in {'linux': linux, 'windows': windows, 'mac': mac}.items():
+        try:
+            context[os_str] = os.get()
+        except Launcher.DoesNotExist:
+            continue
+    return render(request, 'launcher_download/download.html', context)
 
 
 
