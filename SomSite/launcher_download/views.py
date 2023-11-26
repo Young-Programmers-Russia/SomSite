@@ -25,8 +25,10 @@ from .models import Launcher
 def launcher_view(request):
     linux = Launcher.objects.filter(os="LINUX").order_by('version')[:1]
     windows = Launcher.objects.filter(os="WINDOWS").order_by('version')[:1]
+    launcher = Launcher.objects.filter(os="WINDOWS").order_by('-version')
     mac = Launcher.objects.filter(os="MAC").order_by('version')[:1]
     context = {}
+    context["launcher"] = launcher
     for os_str, os in {'linux': linux, 'windows': windows, 'mac': mac}.items():
         try:
             context[os_str] = os.get()

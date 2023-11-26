@@ -2,7 +2,7 @@ import uuid
 
 from django.db import models
 
-from apps.mods.models import Modpack
+from SomSite.mods.models import Modpack
 from django.conf import settings
 
 

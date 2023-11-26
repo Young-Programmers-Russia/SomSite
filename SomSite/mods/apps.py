@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class ServerConfig(AppConfig):
+class ModConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.servers'
-    verbose_name = 'servers'
+    name = 'SomSite.mods'
+    verbose_name = 'mods'

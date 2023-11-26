@@ -15,7 +15,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-APPS_DIR = BASE_DIR / 'apps'
+SITE_DIR = BASE_DIR / 'SomSite'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -38,11 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'apps.main',
-    'apps.mods',
-    'apps.servers',
-    'apps.users',
-    'apps.launcher_download',
+    'rest_framework',
+
+    'SomSite.main',
+    'SomSite.mods',
+    'SomSite.servers',
+    'SomSite.users',
+    'SomSite.launcher_download',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'SomSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,29 +121,17 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
-    ('general', BASE_DIR / 'static' / 'general'),
-    ('main', APPS_DIR / 'main' / 'static'),
-    ('users', APPS_DIR / 'users' / 'static'),
-    ('mods', APPS_DIR / 'mods' / 'static'),
-    ('servers', APPS_DIR / 'servers' / 'static'),
-    ('launcher', APPS_DIR / 'launcher_download' / 'static')
+    ('main', SITE_DIR / 'main' / 'static'),
+    ('users', SITE_DIR / 'users' / 'static'),
+    ('mods', SITE_DIR / 'mods' / 'static'),
+    ('servers', SITE_DIR / 'servers' / 'static'),
+    ('launcher', SITE_DIR / 'launcher_download' / 'static')
 ]
 
 # Media files (Files from user input from forms)
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-# # Email reports
-
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'ragexzona@gmail.com'
-# EMAIL_HOST_PASSWORD = 'ptks xghi ikbj orkm'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False
-# Default primary key field type
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
@@ -154,4 +144,24 @@ LOGIN_REDIRECT_URL = '/accounts/profile'
 LOGIN_URL = '/accounts/login'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
+# # Email reports
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'ragexzona@gmail.com'
+# EMAIL_HOST_PASSWORD = 'ptks xghi ikbj orkm'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+# Default primary key field type
+
+# API settings
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}

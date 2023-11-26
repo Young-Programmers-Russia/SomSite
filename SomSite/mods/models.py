@@ -1,4 +1,6 @@
 import uuid
+
+from django.contrib.admin import TabularInline
 from django.db import models
 
 
@@ -18,7 +20,7 @@ class Modpack(models.Model):
 
 class Mod(models.Model):
     mod_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    modpacks = models.ManyToManyField(Modpack, null=True, blank=True)
+    modpacks = models.ManyToManyField(Modpack, blank=True)
     mod_name = models.CharField(max_length=30)
     mod_versions = models.CharField(max_length=30)
     mod_link = models.CharField(max_length=50, null=True, blank=True)
@@ -32,3 +34,4 @@ class Mod(models.Model):
 
     def __str__(self) -> str:
         return str(self.mod_name)
+

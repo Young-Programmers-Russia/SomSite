@@ -1,3 +1,6 @@
+import requests
+from django.shortcuts import render
+
 from django.views.generic import ListView, DetailView
 
 from .models import Server
@@ -14,4 +17,12 @@ class ServerPage(DetailView):
     model = Server
     slug_field = 'server_slug'
     context_object_name = 'server'
+
+
+def get_server_data(request):
+    response = requests.get('https://api.mcsrvstat.us/3/45.156.26.139')
+    context = {'server_data': response.json()}
+    return render(request, 'servers/server1.html', context)
+
+
 

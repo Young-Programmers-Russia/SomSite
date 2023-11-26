@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView
 from .forms import ModsFileFieldForm
+from .models import Mod
 
 
 class ModUploadPage(TemplateView):
@@ -23,8 +24,8 @@ class ModsUploadFormView(FormView):
     def form_valid(self, form):
         files = form.cleaned_data['file_field']
         for f in files:
-            ...     # Сделать так, чтобы файлы создавали свои модели
-            ...     # Проверить куда они грузятся. Должны грузится в папку media
+            Mod(mod_file=f)
+        form.save()
         return super().form_valid(form)
 
 
