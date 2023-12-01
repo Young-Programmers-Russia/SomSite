@@ -12,3 +12,6 @@ class IndividualNewsPage(TemplateView):
 class HomePage(TemplateView):
     template_name = 'main/home.html'
 
+class TryPage(TemplateView):
+    template_name = 'main/try.html'
+

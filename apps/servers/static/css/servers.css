@@ -35,6 +35,7 @@
     height: 80px;
 }
 .server{
+
     display: flex;
     justify-content: start;
     gap: 15px;
