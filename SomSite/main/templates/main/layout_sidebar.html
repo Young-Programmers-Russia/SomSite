@@ -1,8 +1,8 @@
-{% extends "general/layout.html" %}
+{% extends "main/layout.html" %}
 {% load static %}
 
 {% block style1 %}
-<link rel="stylesheet" href="{% static 'general/css/layout_sidebar.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/layout_sidebar.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -19,10 +19,10 @@
                     </div>
                     <div class="sidebar_items">
                         {% for server in minecraft %}
-                            <a href="/servers/{{server.server_slug}}">
+                            <a href="/servers/{{server.slug}}">
                                 <div class="sidebar_item">
-                                    <img src="/media/{{ server.server_img }}" alt="">
-                                    <h2>{{ server.server_name }}</h2>
+                                    <img src="{{server.icon.url}}" alt="">
+                                    <h2>{{ server.name }}</h2>
                                 </div>
                             </a>
                         {% endfor %}

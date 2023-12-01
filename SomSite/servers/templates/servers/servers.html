@@ -1,4 +1,4 @@
-{% extends "general/layout_sidebar.html" %}
+{% extends "main/layout_sidebar.html" %}
 {% load static %}
 {% block title %} servers {% endblock %}
 {% block style1 %}
@@ -18,22 +18,22 @@
                 </div>
                 {% for version in servers %}
                     {% ifchanged %}
-                        <p class="servers_version">{{ version.minecraft_version }}</p>
+                        <p class="servers_version">{{ version.game_version.minecraft_version }}</p>
                         <div class="server_1">
                             <div class="servers_items">
                                 {% for server in servers %}
-                                    {% if version.minecraft_version == server.minecraft_version%}
-                                        <a href="{{ server.server_slug }}">
+                                    {% if version.game_version.minecraft_version == server.game_version.minecraft_version%}
+                                        <a href="{{server.slug}}">
                                             <div class="servers_item">
                                                 <div class="server">
-                                                    <img src="/media/{{ server.server_img }}" alt="">
+                                                    <img src="{{api.icon}}" alt="">
                                                     <div class="server_info">
-                                                        <h2>{{ server.server_name }}</h2>
-                                                        <p>{{ server.server_description}}</p>
+                                                        <h2>{{ server.name }}</h2>
+                                                        <p>{{ server.description}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="server_online"></div>
-                                                <p class="info_online">20/100</p>
+                                                <p class="info_online">{{api.player_count.online}}/{{api.player_count.max}}</p>
                                             </div>
                                         </a>
                                     {% endif %}

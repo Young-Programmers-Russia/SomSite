@@ -1,14 +1,29 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model
-from django.contrib.auth.models import Group
+from django.contrib.auth import get_user_model, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, TemplateView
-from rest_framework import viewsets
-from rest_framework import permissions
-from .serializers import UserSerializer, GroupSerializer
+from django.views.generic import *
 
-from .forms import RegistrationForm
+from rest_framework import views, permissions, status
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
+from .forms import *
+from .serializers import *
+
+
+@api_view(['GET'])
+@authentication_classes([SessionAuthentication, BasicAuthentication])
+@permission_classes([IsAuthenticated])
+def login_view(request, format=None):
+    context = {
+        'user': str(request.user),
+        'auth': str(request.auth)
+    }
+    return Response(context)
 
 
 class RegistrationPage(CreateView):
@@ -27,23 +42,3 @@ class RegistrationPage(CreateView):
 class AccountPage(LoginRequiredMixin, TemplateView):
     template_name = "users/account.html"
     login_url = reverse_lazy('users:login')
-
-
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    User = get_user_model()
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-
-class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticated]
-

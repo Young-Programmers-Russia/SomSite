@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'SomSite.mods',
     'SomSite.servers',
     'SomSite.users',
-    'SomSite.launcher_download',
+    'SomSite.launchers',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'management.context_processors.context_processor.add_variable_to_context'
+                'management.context_processors.servers_display.variable_to_context'
             ]
         },
     },
@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
     ('users', SITE_DIR / 'users' / 'static'),
     ('mods', SITE_DIR / 'mods' / 'static'),
     ('servers', SITE_DIR / 'servers' / 'static'),
-    ('launcher', SITE_DIR / 'launcher_download' / 'static')
+    ('launchers', SITE_DIR / 'launchers' / 'static')
 ]
 
 # Media files (Files from user input from forms)
@@ -159,6 +159,7 @@ LOGOUT_REDIRECT_URL = '/accounts/login'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [

@@ -41,3 +41,16 @@ class BugReport(models.Model):
     text = models.TextField(_("Текст"))
 
 
+class GameVersion(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    minecraft_version = models.CharField(max_length=100)
+    loader_core = models.CharField(max_length=100)
+    loader_core_version = models.CharField(max_length=100)
+
+    def __str__(self):
+        return 'mc: %s || loader: %s %s' % (self.minecraft_version, self.loader_core, self.loader_core_version)
+

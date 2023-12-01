@@ -1,3 +1,5 @@
+import csv
+
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
@@ -55,3 +57,15 @@ def bug_report(request):
     else:
         form = ReportForm()
     return render(request, 'main/bug_report.html', {'form': form})
+
+
+class PrivacyView(TemplateView):
+    template_name = "main/privacy.html"
+
+
+def privacy_view(request):
+    template = 'main/privacy.html'
+    file = 'D:/Programming/Projects/SomSite/SomSite/main/static/text/privacy.txt'
+    text = []
+    f = open(file, 'r+', encoding='utf-8')
+    return render(request, template, {"text": f.readlines()})

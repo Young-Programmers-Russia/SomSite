@@ -1,11 +1,20 @@
 from django.contrib import admin
-from .models import Mod, Modpack
-from .forms import ModsFileFieldForm
+from .models import *
+
+
+class ModpackModInline(admin.TabularInline):
+    model = ModpackMod
 
 
 @admin.register(Mod)
 class ModAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"mod_slug": ["mod_name"]}
+    prepopulated_fields = {"slug": ["name"]}
+    fields = (('name', 'mod_version'), 'game_version', ('file', 'url'), 'description', 'is_server', 'slug')
+    inlines = [ModpackModInline]
 
 
-admin.site.register(Modpack)
+@admin.register(Modpack)
+class ModpackAdmin(admin.ModelAdmin):
+    list_display = ['name',]
+    inlines = [ModpackModInline]
+

@@ -1,37 +1,53 @@
 import uuid
 
-from django.contrib.admin import TabularInline
 from django.db import models
 
 
-class Modpack(models.Model):
-    modpack_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    modpack_name = models.CharField(max_length=30)
-    mod_count = models.IntegerField(default=0)
-    modpack_version = models.CharField(max_length=25)
-    minecraft_version = models.CharField(max_length=25)
-    loader_core = models.CharField(max_length=50)
-    minimal_loader_version = models.CharField(max_length=25)
-    is_server = models.BooleanField(default=False)
-
-    def __str__(self) -> str:
-        return str(self.modpack_name) + str(self.modpack_version)
-
-
 class Mod(models.Model):
-    mod_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    modpacks = models.ManyToManyField(Modpack, blank=True)
-    mod_name = models.CharField(max_length=30)
-    mod_versions = models.CharField(max_length=30)
-    mod_link = models.CharField(max_length=50, null=True, blank=True)
-    mod_file = models.FileField(upload_to='mods/')
-    mod_descriptions = models.TextField(default=None)
-    minecraft_versions = models.CharField(max_length=30)
-    loader_core = models.CharField(max_length=50)
-    minimal_loader_version = models.CharField(max_length=25)
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    name = models.CharField(max_length=100)
+    mod_version = models.CharField(max_length=100)
+    game_version = models.ForeignKey(
+        'main.GameVersion',
+        on_delete=models.CASCADE,
+    )
+    file = models.FileField()
+    url = models.URLField()
+    description = models.TextField()
+    is_server = models.BooleanField()
+    slug = models.SlugField()
+
+    def __str__(self):
+        return '%s' % self.name
+
+
+class Modpack(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    name = models.CharField(max_length=100)
+    modpack_version = models.CharField(max_length=100)
+    game_version = models.ForeignKey(
+        'main.GameVersion',
+        on_delete=models.CASCADE,
+    )
     is_server = models.BooleanField(default=False)
-    mod_slug = models.SlugField(max_length=50, unique=True)
+    mods = models.ManyToManyField(
+        'Mod',
+        through='ModpackMod',
+        through_fields=('modpack_id', 'mod_id')
+    )
 
-    def __str__(self) -> str:
-        return str(self.mod_name)
+    def __str__(self):
+        return "%s" % self.name
 
+
+class ModpackMod(models.Model):
+    modpack_id = models.ForeignKey('Modpack', on_delete=models.CASCADE)
+    mod_id = models.ForeignKey('Mod', on_delete=models.CASCADE)
