@@ -22,14 +22,14 @@
                 <div class="nav_logo">
                     <img src="{% static 'general/images/LOGO.png' %}" alt="Logo" class="logo">
                     {% if user.is_anonymous %}
-                        <div class="nav_login">
+                        <div class="nav_login" id="nav_login">
 
                             <a href='{% url "users:login" %}' class="nav-l">Войти</a>
                             <a href='{% url "users:registration" %}' class="nav-2">Зарегистироваться</a>
 
                         </div>
 
-                        <img src="{% static 'general/images/icon_of_login.png' %}" alt="icon_of_login" class="icon_of_login">
+                        <img src="{% static 'general/images/icon_of_login.png' %}" alt="icon_of_login" class="icon_of_login" id="icon_of_login">
 
                         <div class="nav_menu" id="nav_menu">
                             <span></span>

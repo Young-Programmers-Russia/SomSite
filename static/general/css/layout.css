@@ -6,6 +6,10 @@ a{
     color: black;
 }
 
+.col-12{
+    padding:0;
+}
+
 body{
     margin:0;
     padding:0;
@@ -326,7 +330,6 @@ footer{
         height:20px;
         margin-top: 14px;
 
-
     }
 
     .nav_menu:before,
@@ -338,6 +341,7 @@ footer{
         height: 2px;
         z-index:3;
         transition: all 0.3s ease 0s;
+
     }
 
     .nav_menu:before{
@@ -367,7 +371,6 @@ footer{
         left: 0;
         z-index:3;
         transition: all 0.3s ease 0s;
-
     }
 
     .nav_menu.active span{
@@ -375,20 +378,31 @@ footer{
     }
 
     .nav_login{
-        display: none;
-
+        display: flex;
+        position: fixed;
+        top: 5%;
+        right: 15%;
+        height: 20%;
+        background-color: grey;
+        min-width: 50%;
+        justify-content: center;
+        flex-direction: column;
+        transform:translateY(-100%) scale(0);
+        transition: 0.5s all;
     }
 
-    .col-sm-12{
-        width:100%;
-        margin: 0;
-        padding: 0;
+    .nav_login.active{
+        transform:translateY(0%) scale(100%);
+    }
 
-
+    .nav-l,
+    .nav-2{
+        background-color: grey;
+        margin: 0 auto;
+        color: white;
     }
 
     .nav_items{
-
         position:fixed;
         top: 0;
         right: 0;
@@ -399,16 +413,23 @@ footer{
         flex-direction: column;
         transform:translateX(100%) ;
         transition: 0.5s all;
-
     }
 
     .nav_items.active{
         transform:translateY(0%) scale(100%);
     }
+
+    .col-sm-12{
+            width:100%;
+            margin: 0;
+            padding: 0;
+        }
+
     .drop{
         justify-content: center;
 
     }
+
     .dropdown-content{
         position:static;
     }
@@ -427,18 +448,6 @@ footer{
     .logo{
         width: 45px;
         height:45px;
-    }
-
-
-
-}
-
-@media screen and (max-width: 992px){
-    .nav_items{
-        width: 250px;
-    }
-    footer.footer{
-        height: 100px;
     }
 
 }
@@ -482,4 +491,22 @@ footer{
     footer.footer{
         height: 70px;
     }
+}
+
+@media screen and (max-width: 992px){
+    .nav_items{
+        width: 250px;
+    }
+    footer.footer{
+        height: 100px;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .home_page{
+        min-width: 100%;
+    }
+
 }
