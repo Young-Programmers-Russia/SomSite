@@ -22,10 +22,10 @@
                 {{ field }}
             </div>
             {% endfor %}
-            <div class="form_group">
-                <button type="submit" class="form_button">Зарегистрироваться</button>
+            <div class="form_group reg">
+                <button type="submit" class="form_button">Регистрация</button>
             </div>
-            <a href='{% url "users:login" %}'>Вход</a>
+            <a class="reg" href='{% url "users:login" %}'>Вход</a>
         </form>
     </div>
 {% endblock %}

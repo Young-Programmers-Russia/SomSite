@@ -29,7 +29,7 @@
 
                         </div>
 
-                        <img src="{% static 'general/images/icon_of_login.png' %}" alt="icon_of_login" class="icon_of_login" id="icon_of_login">
+                        <img src="{% static 'general/images/icon_of_login1.png' %}" alt="icon_of_login" class="icon_of_login" id="icon_of_login">
 
                         <div class="nav_menu" id="nav_menu">
                             <span></span>
@@ -99,7 +99,7 @@
         <!--                    <a href="#" class="href">Банлист</a>-->
                     </div>
                     <form action="{% url 'download:download' %}" class="nav_button">
-                        <button class="button">Начать игру <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button class="button"> <h2 class="game">Начать игру</h2>  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.5005 7.25L1.77175 19.0225C1.52718 19.2654 1.33309 19.5543 1.20064 19.8726C1.06819 20.1909 1 20.5322 1 20.8769C1 21.2216 1.06819 21.5629 1.20064 21.8812C1.33309 22.1994 1.52718 22.4883 1.77175 22.7313C2.26596 23.2228 2.93468 23.4988 3.63175 23.4988C4.32881 23.4988 4.99753 23.2228 5.49174 22.7313L17.2505 11" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M8.50049 1H14.233C14.5645 1.00007 14.8824 1.13181 15.1167 1.36625L23.1342 9.38375C23.3687 9.61812 23.5004 9.93601 23.5005 10.2675V16C23.5005 16.663 23.2371 17.2989 22.7683 17.7678C22.2994 18.2366 21.6635 18.5 21.0005 18.5C20.3374 18.5 19.7016 18.2366 19.2327 17.7678C18.7639 17.2989 18.5005 16.663 18.5005 16V12.25L12.2505 6H8.50049C7.83745 6 7.20156 5.73661 6.73272 5.26777C6.26388 4.79893 6.00049 4.16304 6.00049 3.5C6.00049 2.83696 6.26388 2.20107 6.73272 1.73223C7.20156 1.26339 7.83745 1 8.50049 1Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -110,10 +110,16 @@
         </div>
 
     </header>
+
+
+
+        <img class="up_image" id="up_image" src="{% static 'general/images/up.png' %}" alt="">
+
+    
     {% block content %}
     {% endblock %}
     <footer class="footer">
-        <div class="container">
+        <div class="container footer">
             <div class="us">
                 <img src="{% static 'general/images/LOGO.png' %}" alt="Logo" class="footer_logo">
                 <div class="contact">

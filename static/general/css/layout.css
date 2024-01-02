@@ -33,6 +33,10 @@ h1, h2, h3, h4, p{
 
 }
 
+.header{
+
+}
+
 .container{
     width: 1170px;
     margin: 0 auto 40px auto;
@@ -191,7 +195,7 @@ h1, h2, h3, h4, p{
     background: linear-gradient(315deg, rgb(240, 228, 156) 10%, rgb(225, 68, 78));
     border-radius: 0 0 15px 15px;
     display: flex;
-    /*justify-content: space-between*/;
+    /*justify-content: space-between;*/
     padding: 15px;
 }
 
@@ -286,6 +290,11 @@ footer{
     margin-top: auto;
     width: 100%;
 }
+
+.container.footer{
+    margin-top: 20px;
+
+}
 .footer_logo{
     width: 15%;
     margin: auto 0;
@@ -300,6 +309,21 @@ footer{
     display: flex;
     justify-content: start;
     gap: 15px;
+}
+
+.up{
+
+}
+
+.up_image{
+    width: 45px;
+    height: 45px;
+
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    cursor: pointer;
+    transform: rotate(45deg);
 }
 
 @media screen and (max-width: 576px) {
@@ -319,8 +343,20 @@ footer{
 
     }
 
+    .form_button{
+        width:100%;
+    }
+
     .button.button{
-        width:
+
+    }
+
+    h2.game{
+
+    }
+
+    .nav_button{
+        width: 85%;
     }
 
     .nav_menu{
@@ -335,7 +371,7 @@ footer{
     .nav_menu:before,
     .nav_menu:after{
         content:'';
-        background-color: white;
+        background-color: black;
         position: absolute;
         width: 100%;
         height: 2px;
@@ -363,7 +399,7 @@ footer{
     }
 
     .nav_menu span{
-        background-color: white;
+        background-color: black;
         position: absolute;
         width: 100%;
         height: 2px;
@@ -476,11 +512,18 @@ footer{
         margin-left: auto;
     }
     .button {
-        width:150px;
+        width:100%;
         height: 50px;
         padding: 0px;
         font-size: 17px;
+        padding-left: 10px;
     }
+
+    h2.game{
+        margin: auto;
+
+    }
+
     .button svg{
         margin-right: 15px;
     }
@@ -491,6 +534,11 @@ footer{
     footer.footer{
         height: 70px;
     }
+
+    .up_image{
+        right: 10px;
+    }
+
 }
 
 @media screen and (max-width: 992px){
