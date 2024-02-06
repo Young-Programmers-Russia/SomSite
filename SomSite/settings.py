@@ -15,7 +15,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-SITE_DIR = BASE_DIR / 'SomSite'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -40,11 +39,11 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'SomSite.main',
-    'SomSite.mods',
-    'SomSite.servers',
-    'SomSite.users',
-    'SomSite.launchers',
+    'SomSite.main.apps.MainConfig',
+    'SomSite.mods.apps.ModsConfig',
+    'SomSite.servers.apps.ServersConfig',
+    'SomSite.users.apps.UsersConfig',
+    'SomSite.launchers.apps.LaunchersConfig',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +61,7 @@ ROOT_URLCONF = 'SomSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,19 +118,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles' / 'static'
 STATICFILES_DIRS = [
-    ('main', SITE_DIR / 'main' / 'static'),
-    ('users', SITE_DIR / 'users' / 'static'),
-    ('mods', SITE_DIR / 'mods' / 'static'),
-    ('servers', SITE_DIR / 'servers' / 'static'),
-    ('launchers', SITE_DIR / 'launchers' / 'static')
+    BASE_DIR / 'staticfiles' / 'dev',
 ]
 
 # Media files (Files from user input from forms)
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'staticfiles' / 'media'
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
