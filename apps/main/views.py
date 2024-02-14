@@ -55,3 +55,10 @@ def bug_report(request):
     else:
         form = ReportForm()
     return render(request, 'main/bug_report.html', {'form': form})
+
+
+def privacy_view(request):
+    template = 'main/privacy.html'
+    file = '/home/mocsom/mocsom.site/apps/main/static/text/privacy.txt'
+    f = open(file, 'r+', encoding='utf-8')
+    return render(request, template, {"text": f.readlines()})

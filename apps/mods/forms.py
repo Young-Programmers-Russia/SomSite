@@ -21,3 +21,4 @@ class MultipleModsFileField(forms.FileField):
 
 class ModsFileFieldForm(forms.Form):
     file_field = MultipleModsFileField()
+

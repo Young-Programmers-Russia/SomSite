@@ -20,6 +20,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     somus = models.IntegerField(default=0)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+    is_friend = models.BooleanField(default=False)
     date_joined = models.DateTimeField(default=timezone.now)
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', ]

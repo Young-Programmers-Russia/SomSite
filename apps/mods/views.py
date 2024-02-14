@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, ListView
 from .forms import ModsFileFieldForm
+from .models import Mod
 
 
 class ModUploadPage(TemplateView):
@@ -28,5 +29,7 @@ class ModsUploadFormView(FormView):
         return super().form_valid(form)
 
 
-class ModsPage(TemplateView):
+class ModsPage(ListView):
+    model = Mod
     template_name = "mods/mods.html"
+    context_object_name = 'mods'
