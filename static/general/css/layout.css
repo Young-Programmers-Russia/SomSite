@@ -6,6 +6,10 @@ a{
     color: black;
 }
 
+.col-12{
+    padding:0;
+}
+
 body{
     margin:0;
     padding:0;
@@ -14,6 +18,7 @@ body{
     background: url("../images/fon.jpg");
     background-size: cover;
     background-attachment: fixed;
+
 }
 h1, h2, h3, h4, p{
     margin: 0;
@@ -24,12 +29,19 @@ h1, h2, h3, h4, p{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width:100%;
+
+}
+
+.header{
+
 }
 
 .container{
     width: 1170px;
     margin: 0 auto 40px auto;
 }
+
 
 .nav_logo{
     display: flex;
@@ -52,6 +64,7 @@ h1, h2, h3, h4, p{
     background-color: #f0e49c;
     padding: 10px;
     border-radius: 15px;
+    max-width:100%;
 }
 
 .header_user:hover{
@@ -182,7 +195,7 @@ h1, h2, h3, h4, p{
     background: linear-gradient(315deg, rgb(240, 228, 156) 10%, rgb(225, 68, 78));
     border-radius: 0 0 15px 15px;
     display: flex;
-    /*justify-content: space-between*/;
+    /*justify-content: space-between;*/
     padding: 15px;
 }
 
@@ -203,6 +216,16 @@ svg{
 .nav_button{
     margin: auto 0 auto auto;
 }
+
+.nav_menu{
+    display:none;
+}
+
+.icon_of_login{
+    display: none;
+}
+
+
 .button {
     cursor: pointer;
     font-weight: 700;
@@ -266,6 +289,12 @@ footer{
     background-color: #242424;
     height: 140px;
     margin-top: auto;
+    width: 100%;
+}
+
+.container.footer{
+    margin-top: 20px;
+
 }
 .footer_logo{
     width: 15%;
@@ -281,4 +310,252 @@ footer{
     display: flex;
     justify-content: start;
     gap: 15px;
+}
+
+.up{
+
+}
+
+.up_image{
+    width: 45px;
+    height: 45px;
+
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+
+@media screen and (max-width: 576px) {
+
+    body.lock{
+        overflow: hidden;
+
+    }
+
+    .container{
+        max-width:100%;
+        width:576px;
+    }
+
+    .container.container-1{
+        position: relative;
+
+    }
+
+    .form_button{
+        width:100%;
+    }
+
+    .button.button{
+
+    }
+
+    h2.game{
+
+    }
+
+    .nav_button{
+        width: 85%;
+    }
+
+    .nav_menu{
+        display: block;
+        position:relative;
+        width:30px;
+        height:20px;
+        margin-top: 14px;
+
+    }
+
+    .nav_menu:before,
+    .nav_menu:after{
+        content:'';
+        background-color: black;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        z-index:3;
+        transition: all 0.3s ease 0s;
+
+    }
+
+    .nav_menu:before{
+        top: 0;
+    }
+
+    .nav_menu.active:before{
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .nav_menu:after{
+        bottom:0;
+    }
+
+    .nav_menu.active:after{
+        transform: rotate(-45deg);
+        bottom:9px;
+    }
+
+    .nav_menu span{
+        background-color: black;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        left: 0;
+        z-index:3;
+        transition: all 0.3s ease 0s;
+    }
+
+    .nav_menu.active span{
+        transform: scale(0);
+    }
+
+    .nav_login{
+        display: flex;
+        position: fixed;
+        top: 5%;
+        right: 15%;
+        height: 20%;
+        background-color: grey;
+        min-width: 50%;
+        justify-content: center;
+        flex-direction: column;
+        transform:translateY(-100%) scale(0);
+        transition: 0.5s all;
+    }
+
+    .nav_login.active{
+        transform:translateY(0%) scale(100%);
+    }
+
+    .nav-l,
+    .nav-2{
+        background-color: grey;
+        margin: 0 auto;
+        color: white;
+    }
+
+    .nav_items{
+        position:fixed;
+        top: 0;
+        right: 0;
+        height: 70%;
+        background-color: #efda97;
+        min-width: 50%;
+        justify-content: center;
+        flex-direction: column;
+        transform:translateX(100%) ;
+        transition: 0.5s all;
+    }
+
+    .nav_items.active{
+        transform:translateY(0%) scale(100%);
+    }
+
+    .col-sm-12{
+            width:100%;
+            margin: 0;
+            padding: 0;
+        }
+
+    .drop{
+        justify-content: center;
+
+    }
+
+    .dropdown-content{
+        position:static;
+    }
+
+    .icon_of_login{
+        display: flex;
+        width: 42px;
+        height: 45px;
+        padding: 3px 0px 3px 0px;
+        position: relative;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .logo{
+        width: 45px;
+        height:45px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        margin-right: 0;
+        margin-left: 0;
+        max-width:100%;
+
+
+    }
+    .container.container-1{
+        padding:0;
+
+    }
+
+    .col-md-12{
+        margin: 0;
+        padding: 0;
+        width:100%;
+    }
+
+    .nav_items{
+        width: 200px;
+        margin-left: auto;
+    }
+    .button {
+        width:100%;
+        height: 50px;
+        padding: 0px;
+        font-size: 17px;
+        padding-left: 10px;
+    }
+
+    h2.game{
+        margin: auto;
+
+    }
+
+    .button svg{
+        margin-right: 15px;
+    }
+
+    .nav_logo{
+        height: 45px;
+    }
+    footer.footer{
+        height: 70px;
+    }
+
+    .up_image{
+        right: 10px;
+    }
+
+}
+
+@media screen and (max-width: 992px){
+    .nav_items{
+        width: 250px;
+    }
+    footer.footer{
+        height: 100px;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .home_page{
+        min-width: 100%;
+    }
+
 }

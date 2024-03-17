@@ -3,7 +3,7 @@
     border-radius: 15px;
     padding: 30px 60px;
     width: 70%;
-    max-height: 520px;
+
 }
 
 .mod_upload{
@@ -16,9 +16,9 @@
 
 .bug_title{
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     margin: 0 auto;
-    max-width: 195px;
+    max-width: 100%;
 }
 
 .mod_title{
@@ -80,4 +80,12 @@
     color: white;
     background-color: #e14950;
     transition-duration: 0.4s;
+}
+
+
+@media screen and (max-width: 992px){
+    .bug_report{
+        min-width:100%;
+        padding: 30px 20px;
+    }
 }

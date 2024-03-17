@@ -5,8 +5,25 @@
 .main_new{
     background-color: #eee3a5;
     border-radius: 15px;
-    padding: 30px;
     margin-bottom: 45px;
+}
+
+.main_new_preview{
+    padding: 20px 20px 10px 20px;
+}
+
+.news_button_main{
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.main_new_preview{
+    padding: 20px 20px 10px 20px;
+}
+
+.news_button_main{
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
 
 .main_new_title, .news_title{
@@ -29,8 +46,7 @@
 }
 
 .main_new img{
-    width: 740px;
-    height: 400px;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -111,7 +127,7 @@
     text-align: center;
     background-color: #eee3a5;
     padding: 5px 0 0 0;
-    width: 400px;
+    width: 100%;
     margin: 0 auto;
     border-radius: 15px;
 }

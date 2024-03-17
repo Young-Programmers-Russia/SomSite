@@ -41,6 +41,9 @@ class IndividualNewsPage(TemplateView):
 class HomePage(TemplateView):
     template_name = 'main/home.html'
 
+class TryPage(TemplateView):
+    template_name = 'main/try.html'
+
 
 def bug_report(request):
     if request.method == 'POST':
