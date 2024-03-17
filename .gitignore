@@ -1,0 +1,11 @@
+.vscode/
+/.env
+media/
+static/
+venv/
+SomSite/__pycache__/
+SomSite/*/__pycache__/
+SomSite/*/*/__pycache__/
+SomSite/*/*/migrations/
+management/__pycache__/
+management/*/__pycache__/

@@ -59,27 +59,27 @@
                 {% endif %}
             </div>
 
-<!--            <div class="pop_up" id="pop_up">-->
-<!--                <div class="pop_up_container">-->
-<!--                    <div class="pop_up_body" id="pop_up_body">-->
-<!--                        <form method="POST">-->
-<!--                            {% csrf_token %}-->
-<!--                            <div class="form_group">-->
-<!--                                <label for="login">Логин:</label>-->
-<!--                                <input type="text" id="login" name="login" required>-->
-<!--                            </div>-->
-<!--                            <div class="form_group">-->
-<!--                                <label for="password">Пароль:</label>-->
-<!--                                <input type="text" id="password" name="password" required>-->
-<!--                            </div>-->
-<!--                            <div class="form_group">-->
-<!--                                <button type="submit" class="form_button">Войти</button>-->
-<!--                            </div>-->
-<!--                        </form>-->
-<!--                        <div class="pop_up_close" id="pop_up_close"> &#10006</div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+           <div class="pop_up" id="pop_up">
+               <div class="pop_up_container">
+                   <div class="pop_up_body" id="pop_up_body">
+                       <form method="POST">
+                           {% csrf_token %}
+                           <div class="form_group">
+                               <label for="login">Логин:</label>
+                               <input type="text" id="login" name="login" required>
+                           </div>
+                           <div class="form_group">
+                               <label for="password">Пароль:</label>
+                               <input type="text" id="password" name="password" required>
+                           </div>
+                           <div class="form_group">
+                               <button type="submit" class="form_button">Войти</button>
+                           </div>
+                       </form>
+                       <div class="pop_up_close" id="pop_up_close"> &#10006</div>
+                   </div>
+               </div>
+           </div>
 
             <div class="nav">
                 <a href="{% url 'main:home' %}" class="nav_home"><svg width="40" height="40" viewBox="0 0 40 40" preserveAspectRatio="xMinYMin meet" fill="none" xmlns="http://www.w3.org/2000/svg">

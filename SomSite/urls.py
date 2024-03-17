@@ -21,9 +21,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.main.urls')),
-    path('accounts/', include('apps.users.urls')),
-    path('mods/', include('apps.mods.urls')),
-    path('servers/', include('apps.servers.urls')),
-    path('download/', include('apps.launcher_download.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('', include('SomSite.apps.main.urls')),
+    path('', include('SomSite.apps.users.urls')),
+    path('', include('SomSite.apps.mods.urls')),
+    path('', include('SomSite.apps.servers.urls')),
+    path('', include('SomSite.apps.launcher_download.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
