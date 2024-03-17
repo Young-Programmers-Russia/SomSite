@@ -15,7 +15,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-APPS_DIR = BASE_DIR / 'apps'
+APPS_DIR = BASE_DIR / 'SomSite' / 'apps'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'apps.main',
-    'apps.mods',
-    'apps.servers',
-    'apps.users',
-    'apps.launcher_download',
+    'SomSite.apps.main',
+    'SomSite.apps.mods',
+    'SomSite.apps.servers',
+    'SomSite.apps.users',
+    'SomSite.apps.launcher_download',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'management.context_processors.context_processor.add_variable_to_context'
+                'misc.context_processors.context_processor.add_variable_to_context'
             ]
         },
     },
