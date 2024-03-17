@@ -1,4 +1,4 @@
-.home_page{
+.home_page, .news_page{
     width: 70%;
 }
 
@@ -9,11 +9,23 @@
     margin-bottom: 45px;
 }
 
-.main_new_title{
+.main_new_title, .news_title{
     display:flex;
     justify-content: space-between;
     margin: 0 auto 20px auto;
     width: 265px;
+}
+
+.news_title{
+    width: 157px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.wrapper_news_title{
+    width: 100%;
+    background-color: #eee3a5;
+    border-radius: 15px;
 }
 
 .main_new img{
