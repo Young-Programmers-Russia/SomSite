@@ -55,3 +55,11 @@ def bug_report(request):
     else:
         form = ReportForm()
     return render(request, 'main/bug_report.html', {'form': form})
+
+
+class AboutUsPage(TemplateView):
+    template_name = "main/about.html"
+
+
+class NewsPage(TemplateView):
+    template_name = "main/news.html"    
