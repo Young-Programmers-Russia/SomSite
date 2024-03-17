@@ -1,4 +1,4 @@
-.home_page{
+.home_page, .news_page{
     width: 70%;
 }
 
@@ -17,11 +17,32 @@
     padding-bottom: 20px;
 }
 
-.main_new_title{
+.main_new_preview{
+    padding: 20px 20px 10px 20px;
+}
+
+.news_button_main{
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.main_new_title, .news_title{
     display:flex;
     justify-content: space-between;
     margin: 0 auto 20px auto;
     width: 265px;
+}
+
+.news_title{
+    width: 157px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.wrapper_news_title{
+    width: 100%;
+    background-color: #eee3a5;
+    border-radius: 15px;
 }
 
 .main_new img{
@@ -37,7 +58,7 @@
     -ms-line-clamp: 6;
     -webkit-line-clamp: 6;
     line-clamp: 6;
-    display: -webkit-box;
+    /*display: -webkit-box;*/
     display: box;
     word-wrap: break-word;
     -webkit-box-orient: vertical;
@@ -52,7 +73,7 @@
     background-color: #e78a70;
     border: none;
     padding: 15px;
-    font-family: "Roboto";
+    font-family: "Ubuntu", sans-serif;
     font-size: 18px;
     border-radius: 15px;
     max-width: 210px;
@@ -73,7 +94,10 @@
     display:flex;
     justify-content: space-between;
     margin: 0 auto 20px auto;
-    width: 305px;
+    width: 325px;
+    background-color: #e78a70;
+    border-radius: 15px;
+    padding: 7px;
 }
 
 .new{
@@ -117,7 +141,7 @@
 .pagination a {
     color: black;
     float: left;
-    font-family: "Roboto", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     padding: 8px 16px;
     text-decoration: none;
 }

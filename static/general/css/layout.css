@@ -13,7 +13,7 @@ a{
 body{
     margin:0;
     padding:0;
-    font-family: "Roboto", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     font-size: 18px;
     background: url("../images/fon.jpg");
     background-size: cover;
@@ -53,7 +53,7 @@ h1, h2, h3, h4, p{
 }
 
 .logo{
-    width: 10%;
+    width: 18%;
 }
 
 .header_user{
@@ -204,7 +204,8 @@ h1, h2, h3, h4, p{
     margin: auto 0 auto 50px;
     width: 450px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10%;
 }
 .nav_home{
     margin: auto 0;
@@ -237,7 +238,7 @@ svg{
     margin: auto 0;
     display: flex;
     justify-content: space-between;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 
 }
 .button:hover{

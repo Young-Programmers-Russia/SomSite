@@ -1,0 +1,42 @@
+.about_us{
+    background-color: #eee3a5;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.about_us_title{
+    display:flex;
+    justify-content: space-between;
+    margin: 0 auto 20px auto;
+    width: 280px;
+}
+
+.about_us_item img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.about_us_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+}
+
+.about_us_item p{
+    text-align: center;
+}
+
+.about_us_item h3{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.about_us_main{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}

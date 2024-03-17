@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import DownloadPage
+
+from .views import launcher_view
 
 
 app_name = 'download'
 urlpatterns = [
-    path('', DownloadPage.as_view(), name='download'),
+    path('', launcher_view, name='download'),
 ]
