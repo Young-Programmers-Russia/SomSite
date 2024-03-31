@@ -3,7 +3,6 @@
 /.cnf
 staticfiles/media/
 staticfiles/prod/
-static/
 venv/
 */*/*/migrations/
 */__pycache__
@@ -13,13 +12,4 @@ db.sqlite3
 /SomSite/settings/prod.py
 .vscode/
 /.env
-media/
-static/
-venv/
-*/migrations/
-*/*/migrations/
-*/*/*/migrations/
-*/__pycache__
-*/*/__pycache__
-*/*/*/__pycache__/
 db.sqlit

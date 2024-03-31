@@ -40,7 +40,7 @@
                         <a href='{% url "users:registration" %}' class="nav-2">Зарегистироваться</a>
                     </div>
                 {% else %}
-                    <a href="{% url 'users:account' %}">
+                    <a href="{% url 'users:account' username=user.username %}">
                         <div class="header_user">
                             {% if user.picture %}
                                 <img src="/media/{{ user.picture }}" class="user_img">
@@ -88,7 +88,7 @@
                 </a>
                 <div class="nav_items">
                     <a href="{% url 'servers' %}" class="href">Сервера</a>
-<!--                    <a href="#" class="href">Новости</a>-->
+                    <a href="{% url 'main:news-detail' %}" class="href">Новости</a>
                     <div class="dropdown">
                         <a class="drop">Помощь <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.0002 17C11.7449 16.9987 11.4931 16.9406 11.2631 16.8299C11.033 16.7192 10.8305 16.5587 10.6702 16.36L6.46019 11.26C6.21419 10.953 6.05938 10.583 6.01341 10.1923C5.96744 9.80153 6.03216 9.40574 6.20019 9.05C6.33647 8.74083 6.55886 8.47741 6.84081 8.29122C7.12276 8.10503 7.45234 8.00393 7.79019 8H16.2102C16.548 8.00393 16.8776 8.10503 17.1596 8.29122C17.4415 8.47741 17.6639 8.74083 17.8002 9.05C17.9682 9.40574 18.0329 9.80153 17.987 10.1923C17.941 10.583 17.7862 10.953 17.5402 11.26L13.3302 16.36C13.1699 16.5587 12.9674 16.7192 12.7373 16.8299C12.5073 16.9406 12.2555 16.9987 12.0002 17ZM8.09019 10L12.0002 14.82L16.0002 10H8.09019Z" fill="black"/>

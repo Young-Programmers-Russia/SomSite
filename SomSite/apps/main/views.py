@@ -1,4 +1,8 @@
+import requests
+from typing import Any
 from django.contrib import messages
+from django.http import HttpRequest
+from django.http.response import HttpResponse as HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.utils.translation import gettext_lazy as _
@@ -35,11 +39,11 @@ class HomeView(TemplateView):
 
 
 class ListNewsView(TemplateView):
-    template_name = 'main/list_news.html'
+    template_name = 'main/news-list.html'
 
 
 class DetailNewsView(TemplateView):
-    template_name = "main/detail_news.html"
+    template_name = "main/news-detail.html"
 
 
 def bug_report(request):
