@@ -28,8 +28,8 @@ class ModsUploadFormView(FormView):
     def form_valid(self, form):
         files = form.cleaned_data['file_field']
         for f in files:
-            ...     # Сделать так, чтобы файлы создавали свои модели
-            ...     # Проверить куда они грузятся. Должны грузится в папку media
+            Mod(mod_file=f)
+        form.save()
         return super().form_valid(form)
 
 

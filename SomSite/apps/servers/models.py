@@ -13,7 +13,7 @@ class Server(models.Model):
     server_description = models.TextField(default=None)
     server_ip = models.CharField(max_length=30)
     java_versions = models.IntegerField()
-    modpack_id = models.ForeignKey(Modpack, related_name='server_modpack_id', on_delete=models.CASCADE, null=True, blank=True)
+    modpack_id = models.ForeignKey("Modpack", related_name='server_modpack_id', on_delete=models.CASCADE, null=True, blank=True)
     minecraft_version = models.CharField(max_length=25)
     loader_core = models.CharField(max_length=50)
     minimal_loader_version = models.CharField(max_length=25)
@@ -26,8 +26,8 @@ class Server(models.Model):
 
 class UserServer(models.Model):
     user_storage_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    server_id = models.ForeignKey(Server, on_delete=models.CASCADE)
+    server_id = models.ForeignKey("Server", on_delete=models.CASCADE)
     date_joined = models.DateTimeField()
     date_last_joined = models.DateTimeField()
     privilege = models.CharField(max_length=40)
-    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user_id = models.ForeignKey("settings.AUTH_USER_MODEL", on_delete=models.CASCADE)

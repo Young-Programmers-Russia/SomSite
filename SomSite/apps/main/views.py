@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 # from django.core.mail import send_mail
 
 from .forms import ReportForm
@@ -34,11 +35,11 @@ class HomeView(TemplateView):
 
 
 class ListNewsView(TemplateView):
-    ...
+    template_name = 'main/list_news.html'
 
 
 class DetailNewsView(TemplateView):
-    template_name = "main/individual_news.html"
+    template_name = "main/detail_news.html"
 
 
 def bug_report(request):
@@ -56,8 +57,12 @@ def bug_report(request):
     return render(request, 'main/bug_report.html', {'form': form})
 
 
+class PrivacyView(TemplateView):
+    template_name = "main/privacy.html"
+
+
 def privacy_view(request):
     template = 'main/privacy.html'
-    file = '/home/mocsom/mocsom.site/apps/main/static/text/privacy.txt'
+    file = settings.STATIC_ROOT / "text" / "privacy.txt"
     f = open(file, 'r+', encoding='utf-8')
     return render(request, template, {"text": f.readlines()})
