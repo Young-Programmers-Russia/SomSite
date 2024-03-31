@@ -1,0 +1,86 @@
+.main{
+    background-color: #eee3a5;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.uniq{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.uniq img{
+    width: 150px;
+    height: 150px;
+}
+.uniq h1{
+    margin-bottom: 17px;
+}
+.money{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    max-width: 70px;
+    margin-bottom: 4px;
+}
+
+.functions_button{
+    background-color: #e78a70;
+    border: none;
+    padding: 10px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    width: 250px;
+    cursor: pointer;
+}
+.functions_button:hover{
+    box-shadow: 1px 1px 62px -6px rgba(226, 79, 84, 0.59);
+    color: white;
+    background-color: #e14950;
+    transition-duration: 0.4s;
+}
+.uniq_2_img form{
+    text-align: center;
+    margin-top: 10px;
+}
+.change{
+    width: 200px;
+
+}
+.uniq_2{
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+}
+.info_main{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.info{
+    margin-bottom: 5px;
+}
+/*.button_install{
+    background-color: #e78a70;
+    border: none;
+    padding: 15px;
+    font-family: "Roboto";
+    font-size: 24px;
+    border-radius: 15px;
+    width: 200px;
+    font-weight: 700;
+    cursor: pointer;
+}*/
+
+.uniq_2_info_button{
+    margin: 0 auto;
+}
+.uniq_2_info{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+}

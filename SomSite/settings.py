@@ -117,20 +117,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles' / 'prod'
 STATICFILES_DIRS = [
-    ('general', BASE_DIR / 'static' / 'general'),
-    ('main', APPS_DIR / 'main' / 'static'),
-    ('users', APPS_DIR / 'users' / 'static'),
-    ('mods', APPS_DIR / 'mods' / 'static'),
-    ('servers', APPS_DIR / 'servers' / 'static'),
-    ('launcher', APPS_DIR / 'launcher_download' / 'static')
+    BASE_DIR / 'staticfiles' / 'devel'
 ]
 
 # Media files (Files from user input from forms)
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'staticfiles' / 'media'
 
 # # Email reports
 
