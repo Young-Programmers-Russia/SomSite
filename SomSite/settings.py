@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'SomSite.apps.mods',
     'SomSite.apps.servers',
     'SomSite.apps.users',
-    'SomSite.apps.launcher_download',
+    'SomSite.apps.launcher',
 ]
 
 MIDDLEWARE = [
