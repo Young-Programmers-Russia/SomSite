@@ -1,0 +1,48 @@
+{% extends "layout_sidebar.html" %}
+{% load static %}
+{% block title %} servers {% endblock %}
+{% block style1 %}
+    <link rel="stylesheet" href="{% static 'css/servers.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="servers">
+                <div class="servers_title">
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.0968 5.18146C25.9755 4.93914 25.7892 4.73536 25.5587 4.59293C25.3282 4.4505 25.0625 4.37504 24.7916 4.375H10.2082C9.65553 4.375 9.15095 4.68708 8.90303 5.18146L3.0697 16.8481C2.96831 17.0507 2.91553 17.2742 2.91553 17.5007C2.91553 17.7273 2.96831 17.9507 3.0697 18.1533L8.90303 29.82C9.15095 30.3129 9.65553 30.625 10.2082 30.625H24.7916C25.3443 30.625 25.8489 30.3129 26.0968 29.8185L31.9301 18.1519C32.0315 17.9493 32.0843 17.7258 32.0843 17.4993C32.0843 17.2727 32.0315 17.0493 31.9301 16.8467L26.0968 5.18146ZM28.2653 16.0417H16.9428L12.5678 7.29167H23.8903L28.2653 16.0417ZM6.00532 17.5L10.2082 9.09417L14.4112 17.5L10.2082 25.9058L6.00532 17.5ZM23.8903 27.7083H12.5678L16.9428 18.9583H28.2653L23.8903 27.7083Z"
+                              fill="black"/>
+                    </svg>
+                    <h1>Список серверов</h1>
+                </div>
+                {% for version in servers %}
+                    {% ifchanged %}
+                        <p class="servers_version">{{ version.minecraft_version }}</p>
+                        <div class="server_1">
+                            <div class="servers_items">
+                                {% for server in servers %}
+                                    {% if version.minecraft_version == server.minecraft_version%}
+                                        <a href="{{ server.server_slug }}">
+                                            <div class="servers_item">
+                                                <div class="server">
+                                                    <img src="/media/{{ server.server_img }}" alt="">
+                                                    <div class="server_info">
+                                                        <h2>{{ server.server_name }}</h2>
+                                                        <p>{{ server.server_description}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="server_online"></div>
+                                                <p class="info_online">20/100</p>
+                                            </div>
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endifchanged %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -26,5 +26,5 @@ urlpatterns = [
     path('', include('SomSite.apps.users.urls')),
     path('', include('SomSite.apps.mods.urls')),
     path('', include('SomSite.apps.servers.urls')),
-    path('', include('SomSite.apps.launcher_download.urls')),
+    path('', include('SomSite.apps.launcher.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

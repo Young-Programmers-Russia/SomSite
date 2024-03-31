@@ -1,5 +1,4 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.utils.translation import gettext_lazy as _
@@ -30,16 +29,16 @@ from .forms import ReportForm
 #     return render(request, 'main/bug_report.html', {})
 
 
-class NewsPage(TemplateView):
+class HomeView(TemplateView):
+    template_name = 'main/home.html'
+
+
+class ListNewsView(TemplateView):
     ...
 
 
-class IndividualNewsPage(TemplateView):
+class DetailNewsView(TemplateView):
     template_name = "main/individual_news.html"
-
-
-class HomePage(TemplateView):
-    template_name = 'main/home.html'
 
 
 def bug_report(request):

@@ -1,9 +1,13 @@
 .vscode/
 /.env
-media/
+/.cnf
+staticfiles/media/
+staticfiles/prod/
 static/
 venv/
-*/migrations/
-*/*/migrations/
+*/*/*/migrations/
 */__pycache__
 */*/__pycache__
+*/*/*/__pycache__
+db.sqlite3
+/SomSite/settings/prod.py
