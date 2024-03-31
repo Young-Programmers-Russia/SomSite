@@ -1,0 +1,12 @@
+.vscode/
+/.env
+media/
+static/
+venv/
+*/migrations/
+*/*/migrations/
+*/*/*/migrations/
+*/__pycache__
+*/*/__pycache__
+*/*/*/__pycache__/
+db.sqlite3

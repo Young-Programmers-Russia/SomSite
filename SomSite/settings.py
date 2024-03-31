@@ -15,6 +15,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+APPS_DIR = BASE_DIR / "SomSite" / "apps"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -39,11 +40,11 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'SomSite.main.apps.MainConfig',
-    'SomSite.mods.apps.ModsConfig',
-    'SomSite.servers.apps.ServersConfig',
-    'SomSite.users.apps.UsersConfig',
-    'SomSite.launchers.apps.LaunchersConfig',
+    'SomSite.apps.main',
+    'SomSite.apps.mods',
+    'SomSite.apps.servers',
+    'SomSite.apps.users',
+    'SomSite.apps.launchers',
 ]
 
 MIDDLEWARE = [
@@ -118,7 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles' / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles' / 'prod'
 STATICFILES_DIRS = [
     BASE_DIR / 'staticfiles' / 'dev',
 ]

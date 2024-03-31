@@ -1,4 +1,4 @@
-from SomSite.servers.models import Server
+from SomSite.apps.servers.models import Server
 
 
 def variable_to_context(request):

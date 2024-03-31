@@ -22,9 +22,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('SomSite.main.urls')),
-    path('accounts/', include('SomSite.users.urls')),
-    path('mods/', include('SomSite.mods.urls')),
-    path('servers/', include('SomSite.servers.urls')),
-    path('download/', include('SomSite.launchers.urls')),
+    path('', include('SomSite.apps.users.urls')),
+    path('', include('SomSite.apps.launchers.urls')),
+    path('', include('SomSite.apps.servers.urls')),
+    path('', include('SomSite.apps.mods.urls')),
+    path('', include('SomSite.apps.main.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
