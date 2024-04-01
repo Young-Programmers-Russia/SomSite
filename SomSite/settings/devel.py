@@ -14,8 +14,8 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-APPS_DIR = BASE_DIR / 'SomSite' / 'apps'
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+APPS_DIR = BASE_DIR / "SomSite" / "apps"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zkr=v=#n447@0+rn)$h*igax2w5m7jyz39z)#0ak@no3ll#)yc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mocsom.site', 'www.mocsom.site', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
 
     'SomSite.apps.main',
     'SomSite.apps.mods',
@@ -68,7 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'misc.context_processors.context_processor.add_variable_to_context'
+                'misc.context_processors.servers_display.variable_to_context'
             ]
         },
     },
@@ -119,24 +121,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles' / 'prod'
 STATICFILES_DIRS = [
-    BASE_DIR / 'staticfiles' / 'devel'
+    BASE_DIR / 'staticfiles' / 'devel',
 ]
 
 # Media files (Files from user input from forms)
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'staticfiles' / 'media'
-
-# # Email reports
-
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'ragexzona@gmail.com'
-# EMAIL_HOST_PASSWORD = 'ptks xghi ikbj orkm'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False
-# Default primary key field type
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
@@ -149,4 +140,25 @@ LOGIN_REDIRECT_URL = '/accounts/profile'
 LOGIN_URL = '/accounts/login'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
+# # Email reports
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'ragexzona@gmail.com'
+# EMAIL_HOST_PASSWORD = 'ptks xghi ikbj orkm'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+# Default primary key field type
+
+# API settings
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}

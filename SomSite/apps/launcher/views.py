@@ -1,44 +1,34 @@
+from django import views
 from django.shortcuts import render
 
+from rest_framework import views
+from rest_framework.response import Response
+
+from .serializers import LauncherSerializer
 from .models import Launcher
 
 
-# def download_file(request, filename=''):
-#     if filename is False:
-#         # Define the full file path
-#         filepath = settings.BASE_DIR + 'media/downloadfile/' + filename
-#         # Open the file for reading content
-#         path = open(filepath, 'rb')
-#         # Set the mime type
-#         mime_type, _ = mimetypes.guess_type(filepath)
-#         # Set the return value of the HttpResponse
-#         response = HttpResponse(path, content_type=mime_type)
-#         # Set the HTTP header for sending to browser
-#         response['Content-Disposition'] = "attachment; filename=%s" % filename
-#         # Return the response value
-#         return response
-#     else:
-#         # Load the template
-#         return render(request, 'launcher_download/download.html')
+os_list = ['linux', 'windows', 'mac']
 
 
-def launcher_view(request):
-    linux = Launcher.objects.filter(os="LINUX").order_by('version')[:1]
-    windows = Launcher.objects.filter(os="WINDOWS").order_by('version')[:1]
-    mac = Launcher.objects.filter(os="MAC").order_by('version')[:1]
-    context = {}
-    for os_str, os in {'linux': linux, 'windows': windows, 'mac': mac}.items():
-        try:
-            context[os_str] = os.get()
-        except Launcher.DoesNotExist:
-            continue
-    return render(request, 'launcher_download/download.html', context)
+class LauncherView(views.View):
+    def get(self, request):
+            context = dict()
+            for os_str in os_list:
+                try:
+                    context[os_str] = Launcher.objects.filter(os=os_str).order_by('-version')[:1].get()
+                except Launcher.DoesNotExist:
+                    continue
+            return render(request, 'launcher/download.html', context)
 
 
-
-
-
-
-
-
-
+class LauncherApi(views.APIView):
+    def get(self, request):
+            context = dict()
+            for os_str in os_list:
+                try:
+                    context[os_str] = LauncherSerializer(Launcher.objects.filter(os=os_str).order_by('-version')[:1].get(), context={'request': request}).data
+                except Launcher.DoesNotExist:
+                    continue
+            return Response({'updates': context})
+    

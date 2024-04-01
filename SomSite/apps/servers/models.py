@@ -26,7 +26,7 @@ class Server(models.Model):
 
 class UserServer(models.Model):
     user_storage_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    server_id = models.ForeignKey(Server, on_delete=models.CASCADE)
+    server_id = models.ForeignKey("Server", on_delete=models.CASCADE)
     date_joined = models.DateTimeField()
     date_last_joined = models.DateTimeField()
     privilege = models.CharField(max_length=40)

@@ -15,7 +15,7 @@
                     <h2>{{ server.server_name }}</h2>
                 </div>
                 <div class="server_online"></div>
-                <p class="info_online">20/100</p>
+                <p class="info_online">{{ api.Players }}/{{ api.MaxPlayers }}</p>
             </div>
             <div class="server_description">
                 <div class="info_item">
@@ -49,13 +49,7 @@
         <div class="peculiarities">
             <h3>Особенности</h3>
             <div class="peculiarities_text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nihil enim qui non, perferendis
-                    excepturi repudiandae soluta, cumque natus perspiciatis vero voluptas alias quisquam. Obcaecati incidunt
-                    aliquam porro quaerat ipsa. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis corporis cum
-                    eligendi rem necessitatibus, vero asperiores ad mollitia quisquam natus laudantium impedit est quaerat
-                    assumenda quidem beatae. Officia, ipsam minus? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Fugiat cum quos quod dicta officiis velit dolorem sint a error sequi consequuntur, magnam modi sunt nisi
-                    dolorum quia maiores voluptas magni.</p>
+                <p>{{ api.HostName }}</p>
             </div>
         </div>
     </div>

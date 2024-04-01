@@ -22,8 +22,8 @@
                         <div class="server_1">
                             <div class="servers_items">
                                 {% for server in servers %}
-                                    {% if version.minecraft_version == server.minecraft_version%}
-                                        <a href="{{ server.server_slug }}">
+                                    {% if version.minecraft_version == server.minecraft_version %}
+                                        <a href="{% url 'server' slug=server.server_slug %}">
                                             <div class="servers_item">
                                                 <div class="server">
                                                     <img src="/media/{{ server.server_img }}" alt="">
@@ -33,7 +33,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="server_online"></div>
-                                                <p class="info_online">20/100</p>
+                                                <p class="info_online">{{server.api.Players}}/{{server.api.MaxPlayers}}</p>
                                             </div>
                                         </a>
                                     {% endif %}

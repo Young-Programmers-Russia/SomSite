@@ -1,8 +1,12 @@
+import requests
+from typing import Any
 from django.contrib import messages
-from django.contrib.auth import get_user_model
+from django.http import HttpRequest
+from django.http.response import HttpResponse as HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 # from django.core.mail import send_mail
 
 from .forms import ReportForm
@@ -30,19 +34,19 @@ from .forms import ReportForm
 #     return render(request, 'main/bug_report.html', {})
 
 
-class NewsPage(TemplateView):
-    ...
-
-
-class IndividualNewsPage(TemplateView):
-    template_name = "main/individual_news.html"
-
-
-class HomePage(TemplateView):
+class HomeView(TemplateView):
     template_name = 'main/home.html'
 
 class TryPage(TemplateView):
     template_name = 'main/try.html'
+
+
+class ListNewsView(TemplateView):
+    template_name = 'main/news-list.html'
+
+
+class DetailNewsView(TemplateView):
+    template_name = "main/news-detail.html"
 
 
 def bug_report(request):
@@ -60,9 +64,16 @@ def bug_report(request):
     return render(request, 'main/bug_report.html', {'form': form})
 
 
+class PrivacyView(TemplateView):
+    template_name = "main/privacy.html"
+
+
+def privacy_view(request):
+    template = 'main/privacy.html'
+    file = settings.STATIC_ROOT / "text" / "privacy.txt"
+    f = open(file, 'r+', encoding='utf-8')
+    return render(request, template, {"text": f.readlines()})
+
+
 class AboutUsPage(TemplateView):
     template_name = "main/about.html"
-
-
-class NewsPage(TemplateView):
-    template_name = "main/news.html"    

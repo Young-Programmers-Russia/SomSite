@@ -19,11 +19,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
     path('', include('SomSite.apps.main.urls')),
-    path('accounts/', include('SomSite.apps.users.urls')),
-    path('mods/', include('SomSite.apps.mods.urls')),
-    path('servers/', include('SomSite.apps.servers.urls')),
-    path('download/', include('SomSite.apps.launcher.urls')),
+    path('', include('SomSite.apps.users.urls')),
+    path('', include('SomSite.apps.mods.urls')),
+    path('', include('SomSite.apps.servers.urls')),
+    path('', include('SomSite.apps.launcher.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
