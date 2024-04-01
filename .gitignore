@@ -5,9 +5,9 @@ staticfiles/media/
 staticfiles/prod/
 venv/
 */*/*/migrations/
-*/__pycache__
-*/*/__pycache__
-*/*/*/__pycache__
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
 db.sqlite3
 /SomSite/settings/prod.py
 .vscode/

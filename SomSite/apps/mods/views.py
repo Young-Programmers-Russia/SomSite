@@ -35,7 +35,7 @@ class ModsUploadFormView(FormView):
 
 class ModListView(ListView):
     model = Mod
-    template_name = "mods/mod_list.html"
+    template_name = "mods/mod-list.html"
     context_object_name = 'mods'
 
 
