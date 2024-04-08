@@ -1,3 +1,4 @@
+from typing import Iterable
 import uuid
 
 from django.conf import settings
@@ -11,8 +12,12 @@ from django.utils import timezone
 from .managers import CustomUserManager
 
 
+class NULL_NAMESPACE:
+    bytes = b''
+
+
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.CharField(primary_key=True, max_length=25, unique=True)
     email = models.EmailField(_('email address'), unique=True)
     username = models.CharField(_('username'), max_length=25, unique=True)
     avatar = models.ImageField(null=True, blank=True)
@@ -35,6 +40,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perms(self, app_label):
         return True
+    
+    def save(self, **kwargs):
+        if not self.id:
+            self.id = uuid.uuid3(NULL_NAMESPACE, "OfflinePlayer:" + self.get_username())
+        return super().save(**kwargs)
 
 
 class Like(models.Model):

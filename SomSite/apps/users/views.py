@@ -1,10 +1,10 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.views import LoginView, PasswordChangeView
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, View
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
@@ -31,13 +31,31 @@ class RegistrationPage(CreateView):
     model = get_user_model()
     template_name = "users/registration.html"
     form_class = RegistrationForm
-    context_object_name = 'RegistrationForm '
+    context_object_name = 'RegistrationForm'
 
     def form_invalid(self, form):
         messages.add_message(self.request, messages.ERROR, 'Enter proper information')
 
     def get_success_url(self):
         return reverse_lazy('users:login')
+    
+
+class RegistrationView(View):
+    model = get_user_model()
+    template_name = "users/registration.html"
+    form_class = RegistrationForm
+    context_object_name = 'form'
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(request.GET)
+        context = {self.context_object_name: form}
+        return render(request, self.template_name, context)
+    
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("users:login")
     
 
 # class LoginView(View):
