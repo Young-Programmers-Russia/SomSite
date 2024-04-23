@@ -327,6 +327,16 @@ footer{
     transform: rotate(45deg);
 }
 
+textarea{
+    border-radius: 15px;
+    border: 1px;
+}
+
+.form_control input{
+    border-radius: 15px;
+    border: 1px;
+}
+
 @media screen and (max-width: 576px) {
 
     body.lock{
@@ -421,6 +431,7 @@ footer{
         right: 15%;
         height: 20%;
         background-color: grey;
+        max-width: 60%;
         min-width: 50%;
         justify-content: center;
         flex-direction: column;
@@ -489,6 +500,22 @@ footer{
 
 }
 
+@media screen and (max-width: 628px){
+    .nav_login{
+        display: flex;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .nav-l .nav-2{
+        padding: 7px;
+    }
+
+
+}
+
+
+
 @media screen and (max-width: 768px){
     .container{
         margin-right: 0;
@@ -546,6 +573,11 @@ footer{
     .nav_items{
         width: 250px;
     }
+
+    .nav_login{
+        width:100%;
+    }
+
     footer.footer{
         height: 100px;
     }
@@ -556,6 +588,13 @@ footer{
 
     .home_page{
         min-width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1200px){
+    .nav_login{
+        width:100%;
     }
 
 }

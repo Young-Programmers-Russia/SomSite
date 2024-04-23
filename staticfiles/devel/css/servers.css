@@ -8,10 +8,10 @@
     margin-bottom: 15px;
 }
 .servers_title{
-    display:flex;
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
     margin: 0 auto 20px auto;
-    width: 270px;
+    max-width: 100%;
 }
 .servers_item{
     /*background-color: #e78a70;*/
@@ -44,7 +44,7 @@
 h2{
     font-size: 20px;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin: 0;
 }
 .server_info p{
     font-size: 18px;

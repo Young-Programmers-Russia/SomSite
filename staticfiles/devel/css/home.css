@@ -1,5 +1,8 @@
 .home_page, .news_page{
-    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 25px;
 }
 
 .main_new{

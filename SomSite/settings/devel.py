@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zkr=v=#n447@0+rn)$h*igax2w5m7jyz39z)#0ak@no3ll#)yc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -90,14 +90,9 @@ WSGI_APPLICATION = 'SomSite.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
+        "ENGINE": "django.db.backends.sqlite3",
         "NAME": "local_mocsom_database",
-        "PASSWORD": "Vblyfqn_jqk",
-        "PORT": "3306",
-        "HOST": "localhost",
-        "OPTIONS": {
-            "read_default_file": ".cnf"
-        },
+
     }
 }
 
