@@ -330,11 +330,13 @@ footer{
 textarea{
     border-radius: 15px;
     border: 1px;
+    max-width: 100%;
 }
 
 .form_control input{
     border-radius: 15px;
     border: 1px;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 576px) {
@@ -367,7 +369,7 @@ textarea{
     }
 
     .nav_button{
-        width: 85%;
+        min-width: 85%;
     }
 
     .nav_menu{
@@ -557,8 +559,19 @@ textarea{
     }
 
     .nav_logo{
-        height: 45px;
+        height: 100%;
     }
+
+    .nav_button{
+        width: 30%;
+
+    }
+
+    .nav_items{
+
+
+    }
+
     footer.footer{
         height: 70px;
     }
@@ -571,7 +584,8 @@ textarea{
 
 @media screen and (max-width: 992px){
     .nav_items{
-        width: 250px;
+        width: 40%;
+        margin: auto 0;
     }
 
     .nav_login{

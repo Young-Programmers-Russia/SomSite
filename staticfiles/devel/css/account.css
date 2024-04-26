@@ -5,6 +5,14 @@
     display: flex;
     justify-content: space-between;
 }
+
+.game{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto;
+
+}
+
 .uniq{
     width: 300px;
     display: flex;
@@ -34,7 +42,7 @@
     font-size: 18px;
     border-radius: 15px;
     margin-bottom: 10px;
-    width: 250px;
+    width: 200px;
     cursor: pointer;
 }
 .functions_button:hover{
@@ -62,6 +70,7 @@
 }
 .info{
     margin-bottom: 5px;
+    width: 70%;
 }
 /*.button_install{
     background-color: #e78a70;
@@ -83,4 +92,58 @@
     flex-direction: column;
     justify-content: space-between;
     width: 600px;
+}
+
+
+@media screen and (max-width: 768px){
+    .main{
+        flex-direction: column;
+    }
+
+    .info{
+        width:100%;
+
+    }
+
+    .uniq{
+        text-align: center;
+        flex-direction: column;
+        width:100%;
+    }
+
+    .uniq img{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 7px;
+
+    }
+
+    .money{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .uniq_2{
+        flex-direction: column;
+
+    }
+
+    .uniq_2 img{
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+    }
+
+    .uniq_2_info{
+        max-width: 100%;
+    }
+
+    .functions{
+        display:flex;
+        flex-direction:column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }

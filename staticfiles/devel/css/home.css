@@ -33,7 +33,7 @@
     display:flex;
     justify-content: space-between;
     margin: 0 auto 20px auto;
-    width: 265px;
+    max-width: 365px;
 }
 
 .news_title{
@@ -46,6 +46,17 @@
     width: 100%;
     background-color: #eee3a5;
     border-radius: 15px;
+}
+
+
+.title{
+    text-align: center;
+    width: 90%;
+}
+
+.cube{
+    width: 10%;
+
 }
 
 .main_new img{
