@@ -13,18 +13,49 @@ class Tags(models.Model):
 
 class Mod(models.Model):
     storage = 'mods/'
-    mod_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    mod_name = models.CharField(max_length=100)
-    mod_versions = models.CharField(max_length=30)
-    mod_file = models.FileField(upload_to=storage)
-    mod_descriptions = models.TextField(default=None)
-    minecraft_versions = models.CharField(max_length=30)
-    loader_core = models.CharField(max_length=50)
-    minimal_loader_version = models.CharField(max_length=25)
-    is_server = models.BooleanField(default=False)
-    mod_slug = models.SlugField(max_length=50, unique=True)
-    tags = models.ManyToManyField('Tags', blank=True, related_name='mods')
-    sha1 = models.CharField(max_length=256, blank=True, editable=False)
+    mod_id = models.UUIDField(
+        primary_key=True, 
+        default=uuid.uuid4, 
+        editable=False
+    )
+    mod_name = models.CharField(
+        max_length=100
+    )
+    mod_versions = models.CharField(
+        max_length=30
+    )
+    mod_file = models.FileField(
+        upload_to=storage
+    )
+    mod_descriptions = models.TextField(
+        default=None
+    )
+    minecraft_versions = models.CharField(
+        max_length=30
+    )
+    loader_core = models.CharField(
+        max_length=50
+    )
+    minimal_loader_version = models.CharField(
+        max_length=25
+    )
+    is_server = models.BooleanField(
+        default=False
+    )
+    mod_slug = models.SlugField(
+        max_length=50, 
+        unique=True
+    )
+    tags = models.ManyToManyField(
+        'Tags', 
+        blank=True, 
+        related_name='mods'
+    )
+    sha1 = models.CharField(
+        max_length=256, 
+        blank=True, 
+        editable=False
+    )
 
     def __str__(self):
         return self.mod_file.name.replace(self.storage, '')
@@ -43,9 +74,6 @@ class Mod(models.Model):
     @property
     def mod_link(self):
         return f'https://mocsom.site{self.mod_file.url}'
-        
-
-
 
 
 class Modpack(models.Model):

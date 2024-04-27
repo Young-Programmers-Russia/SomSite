@@ -6,7 +6,7 @@ from django.http.response import HttpResponse as HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.utils.translation import gettext_lazy as _
-from django.conf import settings
+from django.conf import settings # type: ignore
 # from django.core.mail import send_mail
 
 from .forms import ReportForm
