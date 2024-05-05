@@ -18,6 +18,7 @@ body{
     background: url("../images/fon.jpg");
     background-size: cover;
     background-attachment: fixed;
+    position: relative;
 
 }
 h1, h2, h3, h4, p{
@@ -312,14 +313,132 @@ footer{
     gap: 15px;
 }
 
-.up{
+/* .up{
 
+} */
+
+.registration_form{
+    transform: translateY(-200%);
+    position: absolute;
+    align-items: center;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    text-align: left;
+    z-index: 10;
+    background-color: #eee3a5;
+    border-radius: 15px;
+    /* display: none; */
+    transition: transform .7s ease;
 }
+
+.log_reg{
+    position: relative;
+    text-align: center;
+    bottom: 15px;
+}
+
+.login_form{    
+    transform: translateY(-200%);
+    position: absolute;
+    align-items: center;
+    top: 70px;
+    left: 30px;
+    right: 30px;
+    width: 500px;
+    height: 410px;
+    margin: 0 auto;
+    text-align: left;
+    z-index: 9;
+    background-color: #eee3a5;
+    border-radius: 15px;
+    /* display: none; */
+    transition: transform .7s ease;
+}
+
+.reg_head{
+    text-align: center;
+}
+
+.log_head{
+    text-align: center;
+}
+
+input{
+    border-radius: 15px;
+}
+
+.registration_input{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    gap: 20px;
+}
+
+.login_input{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    gap: 20px;
+}
+
+.registration_form.registration_form-open{
+    transform: translateY(30%);
+}
+
+.login_form.login_form-open{
+    transform: translateY(30%);
+}
+
+.close_btnR{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0px;
+    margin: auto;
+    background-color: #eee3a5;
+}
+
+.close_btnL{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0px;
+    margin: auto;
+    background-color: #eee3a5;
+}
+
+.reg{
+    padding-left: 10px;
+}
+
+.log{
+    padding-left: 10px;
+}
+
+.l_close{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+}
+
+.l_close.l_open{
+    display: block;
+}
+
+
 
 .up_image{
     width: 45px;
     height: 45px;
-
     position: fixed;
     bottom: 40px;
     right: 30px;

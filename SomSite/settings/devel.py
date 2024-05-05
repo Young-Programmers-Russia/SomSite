@@ -90,14 +90,14 @@ WSGI_APPLICATION = 'SomSite.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
+        "ENGINE": "django.db.backends.sqlite3",
         "NAME": "local_mocsom_database",
         "PASSWORD": "Vblyfqn_jqk",
         "PORT": "3306",
         "HOST": "localhost",
-        "OPTIONS": {
-            "read_default_file": ".cnf"
-        },
+        # "OPTIONS": {
+        #     "read_default_file": ".cnf"
+        # },
     }
 }
 

@@ -45,3 +45,49 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+
+
+
+const regBtn = document.querySelector(".nav-2");
+const logBtn = document.querySelector(".nav-l");
+const regF = document.querySelector(".registration_form");
+const logF = document.querySelector(".login_form");
+const closeBtnL = document.querySelector(".close_btnL");
+const closeBtnR = document.querySelector(".close_btnR");
+const shadow = document.querySelector(".l_close");
+
+const registration = document.querySelector(".reg");
+const login = document.querySelector(".log")
+
+
+regBtn.addEventListener("click", ()=>{
+  regF.classList.toggle("registration_form-open");
+  shadow.classList.add("l_open");
+});
+
+logBtn.addEventListener("click", ()=>{
+  logF.classList.toggle("login_form-open");
+  shadow.classList.add("l_open");
+});
+
+closeBtnL.addEventListener("click", ()=>{
+  logF.classList.remove("login_form-open");
+  shadow.classList.remove("l_open");
+
+});
+
+closeBtnR.addEventListener("click", ()=>{
+  regF.classList.remove("registration_form-open");
+  shadow.classList.remove("l_open");
+});
+
+registration.addEventListener("click", ()=>{
+  logF.classList.remove("login_form-open");
+  regF.classList.add("registration_form-open");
+})
+
+login.addEventListener("click", ()=>{
+  regF.classList.remove("registration_form-open");
+  logF.classList.add("login_form-open");
+})
+

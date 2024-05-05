@@ -29,6 +29,7 @@
     {% block style2 %}{% endblock %}
 </head>
 <body id="body">
+<div class="l_close"></div>
 <div class="wrapper">
     <header class="header">
         <div class="container container-1">
@@ -40,8 +41,8 @@
                     {% if user.is_anonymous %}
                         <div class="nav_login" id="nav_login">
 
-                            <a href='{% url "users:login" %}' class="nav-l">Войти</a>
-                            <a href='{% url "users:registration" %}' class="nav-2">Зарегистироваться</a>
+                            <a href='#' class="nav-l">Войти</a>
+                            <a href='#' class="nav-2">Зарегистироваться</a>
 
                         </div>
 
@@ -128,7 +129,49 @@
     </header>
 
 
+        <section class="login_form">
+            <div class="login_input">
+                <button class="close_btnL">X</button>
+                <h1 class="log_head">Вход</h1>
+                Имя пользователя:
+                <input type="name" class="login_input_name">
+                Пароль:
+                <input type="password" class="login_input_password">  
+            </div>
+            <div class="log_reg">
+                Вы новый пользователь?
+                <a class="reg" href='#'>Регистрация</a>
+            </div>
+            <div class="form_group">
+                <button type="submit" class="form_button">Войти</button>
+            </div>
+            
+        </section>
+    
 
+   
+        <section class="registration_form">
+            <div class="registration_input">
+                <button class="close_btnR">X</button>
+                <h1 class="reg_head">Регистрация</h1>
+                Имя пользователя:
+                <input type="name" class="registration_input_name">
+                Адрес электронной почты:
+                <input type="email" class="registration_input_email">
+                Пароль:
+                <input type="password" class="registration_input_password">
+                Подтверждение пароля:
+                <input type="password2" class="registration_input_password2">  
+            </div>
+            <div class="log_reg">
+                Уже есть аккаунт?
+                <a class="log" href='#'>Войти</a>
+            </div>
+            <button type="submit" class="form_button">Регистрация</button>
+            
+            
+        </section>
+    
         <img class="up_image" id="up_image" src="{% static 'images/up.png' %}" alt="">
 
     
