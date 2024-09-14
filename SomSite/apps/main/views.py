@@ -77,3 +77,6 @@ def privacy_view(request):
 
 class AboutUsPage(TemplateView):
     template_name = "main/about.html"
+
+class ShopPage(TemplateView):
+    template_name = "main/shop.html"

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %} shop {% endblock %}
+{% block style1 %}
+<link rel="stylesheet" href="{% static 'css/shop.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="containerr">
+    <div class="shop_main_lower">
+        <div class="shop_main">
+            <div class="shop_header">
+                <a href="#"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="60" rx="30" fill="#DDDDDD"/>
+                <path d="M25.9999 23.75L19.7499 30M19.7499 30L25.9999 36.25M19.7499 30L40.5833 30" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                </a>
+                <div class="shop_header_items">
+                        <a href="#" class="text text3 header-text">Предметы</a>
+                        <a href="#" class="text text3 header-text">Привелегии</a>
+                        <a href="#" class="text text3 header-text">Наборы</a>
+                </div>
+            </div>
+            <div class="shop_find">
+                    <a href="#"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="30" r="30" fill="#DDDDDD"/>
+                    <path d="M39.3258 22.4813C36.8965 21.2672 33.6715 20.625 30 20.625C26.3285 20.625 23.1035 21.2672 20.6742 22.4813C18.2449 23.6953 16.875 25.4039 16.875 27.1875V32.8125C16.875 34.5961 18.2602 36.3105 20.6742 37.5188C23.0883 38.727 26.3285 39.375 30 39.375C33.6715 39.375 36.8965 38.7328 39.3258 37.5188C41.7551 36.3047 43.125 34.5961 43.125 32.8125V27.1875C43.125 25.4039 41.7398 23.6895 39.3258 22.4813ZM30 22.5C37.3406 22.5 41.25 25.2223 41.25 27.1875C41.25 29.1527 37.3406 31.875 30 31.875C22.6594 31.875 18.75 29.1527 18.75 27.1875C18.75 25.2223 22.6594 22.5 30 22.5ZM29.0625 33.7336V37.4836C26.8359 37.4109 24.9609 37.0828 23.4375 36.6059V32.9355C25.274 33.4249 27.1624 33.6928 29.0625 33.7336ZM30.9375 33.7336C32.8376 33.6928 34.726 33.4249 36.5625 32.9355V36.6047C35.0391 37.0816 33.1641 37.4098 30.9375 37.4824V33.7336ZM18.75 32.8125V30.648C19.3401 31.1377 19.986 31.5558 20.6742 31.8938C20.959 32.0355 21.2602 32.1691 21.5625 32.2957V35.8594C19.7074 34.9406 18.75 33.784 18.75 32.8125ZM38.4375 35.8594V32.2957C38.7434 32.1691 39.041 32.0355 39.3258 31.8938C40.014 31.5558 40.6599 31.1377 41.25 30.648V32.8125C41.25 33.784 40.2926 34.9406 38.4375 35.8594Z" fill="black"/>
+                    </svg>
+                    </a>
+                    <div class="shop_search">
+                        <form method="get" action="/search">
+                          <input type="text">
+                          <button type="submit" class="button_search"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.25 26.25L18.75 18.75M3.75 12.5C3.75 13.6491 3.97633 14.7869 4.41605 15.8485C4.85578 16.9101 5.5003 17.8747 6.31282 18.6872C7.12533 19.4997 8.08992 20.1442 9.15152 20.5839C10.2131 21.0237 11.3509 21.25 12.5 21.25C13.6491 21.25 14.7869 21.0237 15.8485 20.5839C16.9101 20.1442 17.8747 19.4997 18.6872 18.6872C19.4997 17.8747 20.1442 16.9101 20.5839 15.8485C21.0237 14.7869 21.25 13.6491 21.25 12.5C21.25 11.3509 21.0237 10.2131 20.5839 9.15152C20.1442 8.08992 19.4997 7.12533 18.6872 6.31282C17.8747 5.5003 16.9101 4.85578 15.8485 4.41605C14.7869 3.97633 13.6491 3.75 12.5 3.75C11.3509 3.75 10.2131 3.97633 9.15152 4.41605C8.08992 4.85578 7.12533 5.5003 6.31282 6.31282C5.5003 7.12533 4.85578 8.08992 4.41605 9.15152C3.97633 10.2131 3.75 11.3509 3.75 12.5Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </button>
+                        </form>
+                    </div>
+            </div>
+            <div class="shop_items">
+                <div class="shop_item">
+                    <a href="#">
+                        <img src="{% static 'images/Diamond.png' %}">
+                        <p class="text text3">Название</p>
+                        <p class="text text6">300</p>
+                    </a>
+                </div>
+                <div class="shop_item">
+                    <a href="#">
+                        <img src="{% static 'images/Diamond.png' %}">
+                        <p class="text text3">Название</p>
+                        <p class="text text6">300</p>
+                    </a>
+                </div>
+                <div class="shop_item">
+                    <a href="#">
+                        <img src="{% static 'images/Diamond.png' %}">
+                        <p class="text text3">Название</p>
+                        <p class="text text6">300</p>
+                    </a>
+                </div>
+                <div class="shop_item">
+                    <a href="#">
+                        <img src="{% static 'images/Diamond.png' %}">
+                        <p class="text text3">Название</p>
+                        <p class="text text6">300</p>
+                    </a>
+                </div>
+                <div class="shop_item">
+                    <a href="#">
+                        <img src="{% static 'images/Diamond.png' %}">
+                        <p class="text text3">Название</p>
+                        <p class="text text6">300</p>
+                    </a>
+                </div>
+                <div class="shop_item">
+                    <a href="#">
+                        <img src="{% static 'images/Diamond.png' %}">
+                        <p class="text text3">Название</p>
+                        <p class="text text6">300</p>
+                    </a>
+                </div>
+                <div class="shop_item">
+                    <a href="#">
+                        <img src="{% static 'images/Diamond.png' %}">
+                        <p class="text text3">Название</p>
+                        <p class="text text6">300</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

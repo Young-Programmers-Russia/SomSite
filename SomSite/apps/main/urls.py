@@ -12,4 +12,5 @@ urlpatterns = [
     path('bug_report/', bug_report, name='bug_report'),
     path('privacy/', privacy_view, name='privacy'),
     path('about_us/', AboutUsPage.as_view(), name="about_us"),
+    path('shop/', ShopPage.as_view(), name="shop"),
 ]
