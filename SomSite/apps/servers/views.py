@@ -1,4 +1,4 @@
-import requests
+#import requests
 from multiprocessing import Pool
 from django.db.models.base import Model as Model
 from django.http import HttpRequest, HttpResponse

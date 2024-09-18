@@ -1,4 +1,4 @@
-import requests
+#import requests
 from typing import Any
 from django.contrib import messages
 from django.http import HttpRequest

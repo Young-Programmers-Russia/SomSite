@@ -1,5 +1,3 @@
-from distutils.version import LooseVersion
-
 from django.db import models
 
 
